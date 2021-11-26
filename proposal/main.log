@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.6.4)  26 NOV 2021 19:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.6.4)  26 NOV 2021 19:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -907,7 +907,7 @@ LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
 nput line 127.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd)
-<orcid.pdf, id=58, 256.96pt x 256.96pt>
+<orcid.pdf, id=54, 256.96pt x 256.96pt>
 File: orcid.pdf Graphic file (type pdf)
 <use orcid.pdf>
 Package pdftex.def Info: orcid.pdf  used on input line 127.
@@ -943,30 +943,28 @@ Package pdftex.def Info: orcid.pdf  used on input line 127.
 \openout3 = `main.vtc'.
 
 
-(./chapters/1_introduction.tex) (./chapters/2_protocol.tex)
-(./chapters/3_implementation.tex) (./chapters/4_discussion.tex
-Underfull \vbox (badness 3989) has occurred while \output is active []
-
-<cc-by.pdf, id=79, 88.33pt x 31.11626pt>
+(./chapters/1_introduction.tex) (./chapters/2_protocol.tex
+<cc-by.pdf, id=75, 88.33pt x 31.11626pt>
 File: cc-by.pdf Graphic file (type pdf)
 <use cc-by.pdf>
-Package pdftex.def Info: cc-by.pdf  used on input line 3.
+Package pdftex.def Info: cc-by.pdf  used on input line 5.
 (pdftex.def)             Requested size: 39.74274pt x 14.0pt.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
 .
 
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<lipics-logo-bw.pdf, id=82, 591.44762pt x 144.42657pt>
+<lipics-logo-bw.pdf, id=78, 591.44762pt x 144.42657pt>
 File: lipics-logo-bw.pdf Graphic file (type pdf)
 <use lipics-logo-bw.pdf>
-Package pdftex.def Info: lipics-logo-bw.pdf  used on input line 3.
+Package pdftex.def Info: lipics-logo-bw.pdf  used on input line 5.
 (pdftex.def)             Requested size: 64.00354pt x 14.0pt.
  [1.1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./cc-by.pdf> <./orcid.pdf>
  <./lipics-logo-bw.pdf>])
+(./chapters/3_implementation.tex) (./chapters/4_discussion.tex)
 (./chapters/5_questions.tex) (./chapters/6_planning.tex
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
 .
@@ -1028,34 +1026,34 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 447AB634635FF78FF462328F6B562696;1880
-(rerunfilecheck)             After:  960CB90633A319E7453BDBABC8EEB44C;1724.
+(rerunfilecheck)             Before: 960CB90633A319E7453BDBABC8EEB44C;1724
+(rerunfilecheck)             After:  8A3110B0B39C7BE9D977D4CBBCD1A4EC;1860.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
  ) 
 Here is how much of TeX's memory you used:
  23983 strings out of 481239
- 400748 string characters out of 5920378
- 704344 words of memory out of 5000000
- 38740 multiletter control sequences out of 15000+600000
- 625803 words of font info for 107 fonts, out of 8000000 for 9000
+ 400676 string characters out of 5920378
+ 704149 words of memory out of 5000000
+ 38733 multiletter control sequences out of 15000+600000
+ 626052 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 52i,11n,49p,671b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{subsection.7.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
-s/lm/lm-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5
-free1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome5/FontAw
-esome5Free-Regular.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lms
-s8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (3 pages, 383492 bytes).
+ 52i,11n,49p,671b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/f
+a5free1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome5/Font
+Awesome5Free-Regular.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (3 pages, 384241 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 26238 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 201 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
+ 26230 words of extra memory for PDF output out of 29859 (max. 10000000)
 
