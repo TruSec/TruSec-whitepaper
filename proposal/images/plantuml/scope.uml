@@ -1,0 +1,15 @@
+@startuml
+skinparam rectangle {
+	roundCorner 25
+}
+rectangle "Attack Surfaces Covered by TruSec Protocol" {
+	rectangle "Social Engineering" <<W% of Cyber Attacks>> #red {
+		rectangle "Misconfiguration" <<X% of Cyber Attacks>> #orange {
+			rectangle "Other Attack Surfaces" <<Y% of Cyber Attacks>> #red {
+				rectangle "Zero-day Exploits" <<Z% of Cyber Attacks>> #green {
+				}
+			}
+		}
+	}
+}
+@enduml
