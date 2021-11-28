@@ -668,7 +668,7 @@ pdfauthor={\ifx\authoranonymous\relax Anonymous author(s) \else \@authorsforpdf 
 pdfkeywords={\@keywords},
 pdfproducer={LaTeX with lipics-v2021.cls},
 pdfsubject={LIPIcs, Vol.\@SeriesVolume, \@EventShortTitle},
-pdfcopyright = { Copyright (C) \ifx\authoranonymous\relax Anonymous author(s) \else \@copyrightholder; \fi licensed under Creative Commons License CC-BY 4.0},
+pdfcopyright = { \ifx\authoranonymous\relax Anonymous author(s) \else \@copyrightholder; \fi licensed under AGPL 3.0 Licence},
 pdflang={en},
 pdfmetalang={en},
 pdfpublisher={Schloss Dagstuhl -- Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany},
@@ -686,7 +686,7 @@ pdftitle={\@title \if!\@subtitle!\else\subtitleseperator \@subtitle\fi},
 pdfauthor={\ifx\authoranonymous\relax Anonymous author(s) \else \@authorsforpdf \fi},
 pdfkeywords={\@keywords},
 pdfcreator={LaTeX with lipics-v2021.cls},
-pdfsubject={LIPIcs, Vol.\@SeriesVolume, \@EventShortTitle; Copyright (C) \ifx\authoranonymous\relax Anonymous author(s) \else \@copyrightholder; \fi licensed under Creative Commons License CC-BY 4.0}
+pdfsubject={TruCol, \ifx\authoranonymous\relax Anonymous author(s) \else \@copyrightholder; \fi licensed under AGPL 3.0 Licence}
 }%
 \fi	%
 }
@@ -854,7 +854,7 @@ pdfsubject={LIPIcs, Vol.\@SeriesVolume, \@EventShortTitle; Copyright (C) \ifx\au
     \textcopyright\ %
     \ifx!#1!\textcolor{red}{Author: Please fill in the \string\Copyright\space macro}\else\ifx\authoranonymous\relax\textcolor{red}{Anonymous author(s)}\else#1\fi\fi
     ;\\%
-    licensed under Creative Commons License CC-BY 4.0\ifx!#1!\\\null\fi\par}}
+    licensed under AGPL 3.0 Licence\ifx!#1!\\\null\fi\par}}
 \Copyright{\textcolor{red}{Author: Please provide a copyright holder}}
 \let\@copyrightholder\@empty
 \def\hideLIPIcs{\let\@hideLIPIcs\relax}
