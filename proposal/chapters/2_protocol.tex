@@ -1,6 +1,6 @@
 \section{Protocol}
 \label{sec:protocol}
-To provide some context for the envirionment in which the proposed protocol interacts, we give some assumptions describing the status quo.
+To provide some context for the environment in which the proposed protocol interacts, we give some assumptions describing the status quo.
 
 \subsection{Assumptions}
 \subsubsection{Ethical Hacker - perspective}
@@ -9,22 +9,22 @@ To provide some context for the envirionment in which the proposed protocol inte
 	\begin{enumerate}
 		\item Vulnerabilities may be discovered at small/non-profit software development companies that have not allocated a large budget fraction to security.
 		\item Ambiguity in the specification of the bug bounty/reward program may be interpreted in the advantage of the company during triage.
-		\item The triage process may take a relatively long time, requiring the ethical hacker to have sufficient funds to sustain living costs coverage untill the pay-out.
-		\item A conservative/carefullness in the ethical hacker towards approaching the company with respect to the legality of discovering the vulnerability may hinder/slow down the vulnerability disclosure process.
+		\item The triage process may take a relatively long time, requiring the ethical hacker to have sufficient funds to sustain living costs coverage until the pay-out.
+		\item A conservative/carefulness in the ethical hacker towards approaching the company with respect to the legality of discovering the vulnerability may hinder/slow down the vulnerability disclosure process.
 		\item The effort required contact the company and convince them of the seriousness of the bug may consume unnecessary resources.
 	\end{enumerate}
 \end{enumerate}
 
 \subsubsection{Company - perspective}
 \begin{enumerate}
-	\item We assume cyber security vulnerabilities become increasingly more relevant in our increasingly more digitized world. This assumption may be seen as being substantiated by for example the \textit{Cyber Security Assessment Netherlands 2021 (CSAN 2021)} as presented by the Dutch National Coordinator Counterterrorism and Safety of the Ministry of Justice and Security. Currently there is only the Dutch version available at: \url{https://www.nctv.nl/onderwerpen/cybersecuritybeeld-nederland/documenten/publicaties/2021/06/28/cybersecuritybeeld-nederland-2021}. We assume that this trend can be extrapolated from a Dutch perspective to a more global perspective, given the international media coverage of for example many randsomeware attacks.
+	\item We assume cybersecurity vulnerabilities become increasingly more relevant in our increasingly more digitized world. This assumption may be seen as being substantiated by for example the \textit{Cyber Security Assessment Netherlands 2021 (CSAN 2021)} as presented by the Dutch National Coordinator Counterterrorism and Safety of the Ministry of Justice and Security. Currently, there is only the Dutch version available at: \url{https://www.nctv.nl/onderwerpen/cybersecuritybeeld-nederland/documenten/publicaties/2021/06/28/cybersecuritybeeld-nederland-2021}. We assume that this trend can be extrapolated from a Dutch perspective to a more global perspective, given the international media coverage of for example many ransomware attacks.
 	\item We assume that companies are interested, or will become more interested, in showing their customers and/or stakeholders (a quantified perspective on) \textit{how} secure their technology is. We assume it can be quite challenging to convey this perspective clearly due to the following factors:
 	\begin{enumerate}
 		\item Vulnerabilities can be found in various sections of the company, ranging from social engineering, misconfiguration to zero-day exploits. It is difficult to give customers a comprehensive yet concise/simple insight in how "secure" all these attack surfaces are.
-		\item The impact of a vulnerability may be ambiguous or not easily quantifiable. For example, for some companies, vulnerabilities may allow malicious actors to take over critical infrastructure, whilst other vulnerabilities may lead to dataleaks or other undesired side-effects.
+		\item The impact of a vulnerability may be ambiguous or not easily quantifiable. For example, for some companies, vulnerabilities may allow malicious actors to take over critical infrastructure, whilst other vulnerabilities may lead to dataleaks or other undesired side effects.
 		\item It may be difficult to accurately assess the capabilities of malicious adversaries.
 	\end{enumerate}
-	\item We assume some companies might be unfamiliar with vulnerability disclosure and accompanying triage processes, these delicate processes may seem intimitating for new companies that want to start paying attention to their cybersecurity, and this may lead to a lower allocation of cyber sercurity budget. \textit{Note, this assumption is based entirely on imagination, no real world evidence has been found that this is indeed the case.}
+	\item We assume some companies might be unfamiliar with vulnerability disclosure and accompanying triage processes, these delicate processes may seem intimidating for new companies that want to start paying attention to their cybersecurity, and this may lead to a lower allocation of cybersecurity budget. \textit{Note, this assumption is based entirely on imagination, no real world evidence has been found that this is indeed the case.}
 \end{enumerate}
 
 
@@ -47,11 +47,11 @@ With this scope defined, one can look at how companies and ethical hackers inter
 \end{figure}
 \noindent So the basic idea is that companies can put their open source stacks on a decentralised virtual machine (honeypot), then collectively stake money on the stacks, such that everyone can see how much money says the use of certain software packages/combinations is safe. This enables companies to show their customers for example:
 
-\textit{With us, your data is stored using MongoDB Version 5.1, \$314.159,- says it is uncompromised, and its running on Ubuntu Server version 21.10, which has \$4.200.000,- staked on its security. This setup has a configuration with a security on which we staked \$9001,-. If any of these software packages get compromised by WhiteHat hackers, we will be the first to know.}
+\textit{With us, your data is stored using MongoDB Version 5.1, \$314.159,- says it is uncompromised, and it's running on Ubuntu Server version 21.10, which has \$4.200.000,- staked on its security. This setup has a configuration with a security on which we staked \$9001,-. If any of these software packages get compromised by whiteHat hackers, we will be the first to know.}
 
 We believe that might be clear language that enables decision makers and customers interested in company $A$, to get an intuitive understanding on \textit{how secure} some (critical) segments of the company $A$ software is.
 
-For the Whitehat/Ethical hackers, the advantages are clear; they know before they start their work what their payout will be, and they get direct payout upon completion.
+For the whitehat/ethical hackers, the advantages are clear; they know before they start their work what their payout will be, and they get direct payout upon completion.
 
 \subsection{\Cref{fig:protocol_scope} notes}
 With respect to \cref{fig:protocol_scope}, the following notes are made:
@@ -73,6 +73,6 @@ With respect to \cref{fig:interaction}, the following notes are made:
 
 
 \subsection{Development Strategy}
-Based on our work on the TruCol protocol, we estimate that the development of a rough code POC would cost our student team between 3-10K euro. To have a somewhat acceptable code quality POC generated by actual employees, our first cost estimates would be in the order a few hunderd thousand euros. We imagine a fully functional and secure, audited implementation of the TruSec protocol may involve somewhere up to a million euros. 
+Based on our work on the TruCol protocol, we estimate that the development of a rough code POC would cost our student team between 3-10K euro. To have a somewhat acceptable code quality POC generated by actual employees, our first cost estimates would be in the order a few hundred thousand euros. We imagine a fully functional and secure, audited implementation of the TruSec protocol may involve somewhere up to a million euros. 
 
-Since we currently do not posess of the means to allocate such funds into the development of the POC, we propose the following. Our team is highly motivated to develop a detailed and thorough specification of the protocol, such that it may be presentented at Blackhat 2022 (USA). At the end of such a presentation, if accepted, we can reach out to industry to see if there is interest in developing the protocol in collaboration with some leading cyber security companies. This prevents allocating funds to a project for which no vast industry-wide interest has been generated, whilst still enabling people from all accross the world to leverage the protocol if they see fit.
+Since we currently do not possess of the means to allocate such funds into the development of the POC, we propose the following. Our team is highly motivated to develop a detailed and thorough specification of the protocol, such that it may be presented at Blackhat 2022 (USA). At the end of such a presentation, if accepted, we can reach out to industry to see if there is interest in developing the protocol in collaboration with some leading cybersecurity companies. This prevents allocating funds to a project for which no vast industry-wide interest has been generated, whilst still enabling people from all across the world to leverage the protocol if they see fit.
