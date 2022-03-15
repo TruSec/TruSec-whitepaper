@@ -33,7 +33,7 @@ For a specific type of vulnerability, some, to all of these concerns can be alle
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.50\textwidth]{images/plantuml/scope.png}
-    \caption{(See notes) The proposed TruSec protocol is not suited to deal with social engineering attacks, nor is it ideal for misconfiguration exploits. Instead, it is designed to increase the rate of discovery of zero day exploits. Note, we acknowledge that attacks can, in practice, also be a combination of the types.}
+    \caption{(See notes) The proposed TruSec protocol is not suited to deal with social engineering attacks, nor is it ideal for misconfiguration exploits and/or supply-chain attacks. Instead, it is designed to increase the rate of discovery of zero day exploits. Note, we acknowledge that attacks can, in practice, also be a combination of the types.}
     \label{fig:protocol_scope}
 \end{figure}
 
@@ -53,6 +53,7 @@ We believe that might be clear language that enables decision makers and custome
 
 For the whitehat/ethical hackers, the advantages are clear; they know before they start their work how large their payout will be, and they get a direct payout upon completion (after the predetermined responsible disclosure period has ended).
 
+Note. We are aware that the TruSec protocol does not provide a clear picture on the complete security of a system/company, since a chain is only as strong as its weakest link. Hence, if other attack surfaces, such as social engineering are used, companies can still get compromised, regardless of the amount they staked. Therefore, it is important that the numerical value of the amount staked on the zero-day exploit security level is not abused to convey a false sense of security by the staking companies to their customers. Nevertheless, we think for the zero-day-exploit the amounts staked on certain systems and/or configurations, may provide an improved insight.
 \subsection{\Cref{fig:protocol_scope} notes}
 With respect to \cref{fig:protocol_scope}, the following notes are made:
 \begin{enumerate} 
