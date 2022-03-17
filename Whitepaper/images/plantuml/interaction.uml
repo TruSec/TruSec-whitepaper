@@ -23,6 +23,9 @@ actor "WhiteHat Hacker" #white
 "stack"->"Small Company B": Accesses the locker with their private key.
 "Big Company A"->"ipfs": Look at exploit to patch their systems it within responsible disclosure time.
 "Small Company B"->"ipfs": Look at exploit to patch their systems it within responsible disclosure time.
-"ipfs"->"stack": IPFS publically attacks decentralised stack and\n changes its secret after responsible disclosure periods.
+"ipfs"->"stack": The locker opens up and publically\n attacks decentralised VM  after responsible disclosure periods. 
+"ipfs"->"stack": The attack changes the secret in the in the decentralised VM demonstrating write-access.
+"ipfs"->"stack": The attack deposits gas costs for evaluation, and asks for evaluation.
+% TODO: payout.
 "stack"->"WhiteHat Hacker": If the honeypot content is indeed changed, the decentralised stack contract automatically pays out the WhiteHat hacker.
 @enduml
