@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{2022 BlackHat USA submission}
+\author{TruCol}
+
+\begin{document}
+\maketitle
+\section{Introduction}
+This document contains the requirements for the 2022 BlackHat USA conference talk submission for the TruSec protocol, as well as the data that is entered for the submission to give the talk at BlackHat.
+\section{Requirements}
+\section{Submission Data}
+\subsection*{Title}
+Eliminating triage intermediaries for zero-day exploits using a decentralised payout protocol.
+\subsection*{Track}
+Policy
+% Because: everything from political, technology, or economic policies to technical standards, laws, and norms of behavior.
+% Because: metrics for assessing whether attacker or defenders have the upper hand;
+% Because: proposed public policies against new or stubborn security threats or those requiring coordination at scale. 
+\subsection*{Secondary (Track)}
+Defence
+% Doubt: Enterprise Security
+% Because: How can we tip the balance to favor the Blue Team in their daily battle against chaos, data loss, or even lives lost?
+% Because:  What are new approaches to consider, while keeping up with this ever-changing perimeter and the rapid introduction of new attack surfaces?
+% Because: This track welcomes talks on practical, effective, and scalable security isolation technologies and exploit mitigations.
+\subsection*{Format}
+TBD dropdown, after speaker is submitted.
+% TODO: Choose presentation duration (OR):
+%30 minute 
+%40-minute 
+\subsection*{Theme}
+TBD dropdown, after speaker is submitted.
+\subsection{Abstract (299/300 words) (Will be published)}
+We present a protocol aiming at collectivising security bounties for deterministically verifiable zero-day exploits (DVZEs). The protocol enables companies to show customers how secure their software is, in terms of dollars staked on their open-source software stack. It also helps ethical hackers retrieving their bounties without ambiguity. Additionally, subjectivity and manual labour of triage processes are eliminated for DVZEs.
+
+The protocol allows companies and users (stakeholders) to pool bounties on open-source security stacks in decentralised virtual machines that contain a read and/or write secret. The stakeholders can also specify a minimum responsible disclosure duration as well as a public key. Next, an ethical hacker can submit an attack to such a decentralised VM (DVM), by storing it in a decentralised encrypted locker (DEL), and notifying the DVM of its presence. Once the stakeholders see this notification, (along with the rest of the world), they can use their private key to retrieve the attack from the DEL (before the rest of the world). For each bounty placed on the DVM, a call is made to the DEL just before the end of the accompanying responsible disclosure time. This call verifies that the attack is still encrypted. After the respective responsible disclosure periods have passed, the DEL is decrypted and the attack is executed. Successful attacks compromise the DVM read/write secret, triggering bounty hunter payout.
+
+This protocol enables ethical hackers to know, before starting work on their exploit, when they will retrieve a payout and how large that payout will be for publishing their exploits, in a winner-take-all market. At the same time, it allows small companies to stake money on open-source security alongside industry giants. This provides a transparent insight on economically rational hackers in the open-source software exploits segment of the cyber-security market. An accompanying whitepaper presents more details.
+
+%Some of the drawbacks of this protocol are:
+% Attracts wasps once everyone sees a zero day exists.
+% May have high development costs.
+% Allows companies to convey false sense of security as protocol does not cover many attack vectors such as social engineering.
+% Transaction/gas costs may be high.
+% Limits the amount of custom/local systems that can be tested.
+% Limited to open source only?
+
+\subsection{Presentation Outline}
+- State assumptions: 
+0. Mention why we assume the world could benefit from seeing how much money is staked on the security of all open source software stacks. 
+1. Indicate we assume that some ethical hackers may experience some difficulties in retrieving their payout as part of a responsible disclosure protocol.
+- Indicate this presentation merely presents a protocol, not an implementation.
+- Mention the protocol is intended to be open source.
+- Explain protocol using with visualisation of stakeholder and hacker interaction on the decentralised network.
+% TODO: make detailed.
+- Cover protocol attacks by malicious actors, and accompanying incentives.
+% TODO: make detailed.
+- Mention weaknesses of protocol: 
+0. Anyone can see that a zero-day exists (not what it is). 
+1. Limited vulnerability scope due to deterministic verifiability requirement. 
+2. May incentivise companies to convey a false sense of security by overemphasising the numbers, instead of providing a full picture including misconfigurations, supply-chain attacks, social engineering etc.
+- Summarise based on which assumptions this protocol can improve market efficiency for deterministically verifiable zero-day exploits. 
+- Propose strategy to move forward to implementation.
+\subsection{Is this content 100\% new, never before presented?}
+Yes
+\subsection{If no,.. SKIP}
+SKIP
+\subsection{What new research, concept, technique or approach is included in your submission?}
+We believe gaining insight in "how secure a system is" is often difficult or costly, as it requires an analysis of many attack surfaces with risks that are not easily quantifiable. The presented approach makes it simple for anyone in the world with internet access to see how much money is staked on a particular open-source software stack. Hence, the approach provides a partial and simple insight in the zero-day exploit segment of the cybersecurity market. This allows enterprise, small companies and even individual users to collectively (re)allocate their resources (in real-time), to match the most recent thread-landscape in that market segment. Additionally, it provides ethical hackers to rake bounties from multiple companies for multiple software packages in a single exploit. For example, consider a decentralised virtual machine running Ubuntu 20.04.4 LTS (\$2 million staked) With MongoDB 5.0.5 (\$300.000,- staked). If an ethical hacker is able to gain write-access to the Ubuntu 20.04.4 LTS instance, through an Ubuntu zero-day exploit, the hacker may, in some cases, also automatically gain write-access to the MongoDB data. That would allow the hacker to clear two bounties at once. This way, the protocol emphasises that a chain is only as strong as its weakest link. We hope that this may reduce the probabilities of occurrence of vulnerabilities like log4js, or at least expose how underfunded some weak links in open source software may be (such that resource re-allocation may take place).
+
+\subsection{Takeaways}
+We would like to make it easier for ethical hackers to get their bounties, whilst allowing companies to gain insight in how secure their open-source software stacks are, in terms of dollars. Moving forward, we would like to develop a free, open-source implementation of this protocol together with industry leaders.
+\subsection{If applicable, what problem does your research solve?}
+Three problems are solved by the proposed protocol:
+0. Ambiguity is removed in bounty payouts to ethical hackers for deterministically verifiable zero-day exploits.
+1. Companies gain quantitative insight in the level of security of staked open source stacks against zero-day exploits.
+2. Manual labour of cybersecurity triage can be eliminated for deterministically verifiable zero-day exploits.
+\subsection{Will you be releasing a new tool?}
+Not during BlackHat.
+\subsection{Is the tool open source or commercial?}
+The protocol is presented as open-source technology.
+\subsection{If this is a new vulnerability,...SKIP}
+No.
+\subsection{If you have not disclosed the vulnerability,.. SKIP}
+No.
+\subsection{Does your presentation include a demo?}
+No.
+\subsection{If you are a past Black Hat speaker, please provide the event year/location of your most recent event.}
+No.
+\subsection{ So the Review Board is able to get a sense of your presentation style, do you have a video sample of any previous conference presentations?}
+% https://www.youtube.com/watch?v=799XIwqf_hU
+\subsection{Message for Review Board Only}
+If you have any suggestions or feedback on how we could improve this submission, for example if certain parts should be made more explicit/clear, please let us know. We would appreciate the feedback and are happy to use it to converge further towards the BlackHat conference format.
+\end{document}

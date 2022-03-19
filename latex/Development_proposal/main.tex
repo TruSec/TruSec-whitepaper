@@ -1,0 +1,137 @@
+\documentclass[a4paper, UKenglish, cleveref, autoref, thm-restate]{lipics-v2021}
+%This is a template for producing LIPIcs articles. 
+%See lipics-v2021-authors-guidelines.pdf for further information.
+%for A4 paper format use option "a4paper", for US-letter use option "letterpaper"
+%for british hyphenation rules use option "UKenglish", for american hyphenation rules use option "USenglish"
+%for section-numbered lemmas etc., use "numberwithinsect"
+%for enabling cleveref support, use "cleveref"
+%for enabling autoref support, use "autoref"
+%for anonymousing the authors (e.g. for double-blind review), add "anonymous"
+%for enabling thm-restate support, use "thm-restate"
+%for enabling a two-column layout for the author/affilation part (only applicable for > 6 authors), use "authorcolumns"
+%for producing a PDF according the PDF/A standard, add "pdfa"
+
+%\pdfoutput=1 %uncomment to ensure pdflatex processing (mandatatory e.g. to submit to arXiv)
+%\hideLIPIcs  %uncomment to remove references to LIPIcs series (logo, DOI, ...), e.g. when preparing a pre-final version to be uploaded to arXiv or another public repository
+
+%\graphicspath{{./graphics/}}%helpful if your graphic files are in another directory
+
+\bibliographystyle{plainurl}% the mandatory bibstyle
+\usepackage{float}
+
+
+\usepackage{amsmath} % need to be on top for eps files
+\usepackage{mathtools}
+
+\usepackage{graphicx}
+
+\usepackage{cleveref}
+
+\usepackage{algorithmicx}
+
+\usepackage{algcompatible}
+\crefname{algocf}{alg.}{algs.}
+\Crefname{algocf}{Algorithm}{Algorithms}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\renewcommand{\algorithmiccomment}[1]{\bgroup\hfill\tiny//~#1\egroup}
+\newcommand\bigO[1]{$\mathcal{O}(#1)$}
+
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+
+\title{Development Proposal: Security Variant of TruCol protocol} %TODO Please add
+\subtitle{Towards a 2022 Blackhat (USA) presentation}
+%\titlerunning{Spiking Minimum Dominating Set Approximation} %TODO optional, please use if title is longer than one line
+
+%\titlerunning{Dummy short title} %TODO optional, please use if title is longer than one line
+% TODO: remove names from print for double blind article
+\author{Chihab Amghane}{Radboud University}%, [optional: Address], Country \and My second affiliation, Country \and \url{http://www.myhomepage.edu} }
+{}{}{(Optional) author-specific funding acknowledgements}%TODO mandatory, please use full name; only 1 author per \author macro; first two parameters are mandatory, other parameters can be empty. Please provide at least the name of the affiliation and the country. The full address is optional
+
+\author{Victoria Bosch}{Radboud University}%, [optional: Address], Country \and My second affiliation, Country \and \url{http://www.myhomepage.edu} }
+{}{}{}%TODO mandatory, please use full name; only 1 author per \author macro; first two parameters are mandatory, other parameters can be empty. Please provide at least the name of the affiliation and the country. The full address is optional
+
+\author{Rashim Charles}{Radboud University}%, [optional: Address], Country \and My second affiliation, Country \and \url{http://www.myhomepage.edu} }
+{}{}{}%TODO mandatory, please use full name; only 1 author per \author macro; first two parameters are mandatory, other parameters can be empty. Please provide at least the name of the affiliation and the country. The full address is optional
+
+\author{Marc Droogh}{Delft University of Technology}%, [optional: Address], Country \and My second affiliation, Country \and \url{http://www.myhomepage.edu} }
+{}{}{}%TODO mandatory, please use full name; only 1 author per \author macro; first two parameters are mandatory, other parameters can be empty. Please provide at least the name of the affiliation and the country. The full address is optional
+
+\author{Clara Main}{Radboud University}%, [optional: Address], Country \and My second affiliation, Country \and \url{http://www.myhomepage.edu} }
+{}{}{}%TODO mandatory, please use full name; only 1 author per \author macro; first two parameters are mandatory, other parameters can be empty. Please provide at least the name of the affiliation and the country. The full address is optional
+
+\author{Chinari Subhechha Subudhi}{Delft University of Technology}%, [optional: Address], Country \and My second affiliation, Country \and \url{http://www.myhomepage.edu} }
+{}{}{}%TODO mandatory, please use full name; only 1 author per \author macro; first two parameters are mandatory, other parameters can be empty. Please provide at least the name of the affiliation and the country. The full address is optional
+
+\author{Akke Toeter}{Delft University of Technology, Radboud University}%, [optional: Address], Country \and My second affiliation, Country \and \url{http://www.myhomepage.edu} }
+{a.h.h.toeter@student.tudelft.nl}{0000-0002-9577-920X}{}%TODO mandatory, please use full name; only 1 author per \author macro; first two parameters are mandatory, other parameters can be empty. Please provide at least the name of the affiliation and the country. The full address is optional
+
+\author{Eric van der Toorn}{Delft University of Technology}%, [optional: Address], Country \and My second affiliation, Country \and \url{http://www.myhomepage.edu} }
+{}{}{}%TODO mandatory, please use full name; only 1 author per \author macro; first two parameters are mandatory, other parameters can be empty. Please provide at least the name of the affiliation and the country. The full address is optional
+
+% \author{V Bosch}{Radboud}{email}{[orcid]}
+
+% \author{A Diehl}{Radboud}{email}{[orcid]}
+
+% \author{A Toeter}{Radboud}{email}{[orcid]}
+
+% \author{Kwisthout}{Radboud}{email}{[orcid]}
+
+
+\authorrunning{ } %TODO mandatory. First: Use abbreviated first/middle names. Second (only in severe cases): Use first author plus 'et al.'
+
+\Copyright{ } %TODO mandatory, please use full first names. LIPIcs license is "CC-BY";  http://creativecommons.org/licenses/by/3.0/
+
+\ccsdesc[500]{Computing methodologies~Distributed algorithms}
+\ccsdesc[500]{Computer systems organization~Neural networks}
+
+% \ccsdesc[100]{\textcolor{red}{Replace ccsdesc macro with valid one}} %TODO mandatory: Please choose ACM 2012 classifications from https://dl.acm.org/ccs/ccs_flat.cfm 
+
+\keywords{Neuromorphic Computing, Spiking Neural Network, Graph Algorithms, Distributed Computing, Minimum Dominating Set} %TODO mandatory; please add comma-separated list of keywords
+
+\category{} %optional, e.g. invited paper
+
+\relatedversion{} %optional, e.g. full version hosted on arXiv, HAL, or other respository/website
+%\relatedversiondetails[linktext={opt. text shown instead of the URL}, cite=DBLP:books/mk/GrayR93]{Classification (e.g. Full Version, Extended Version, Previous Version}{URL to related version} %linktext and cite are optional
+
+%\supplement{}%optional, e.g. related research data, source code, ... hosted on a repository like zenodo, figshare, GitHub, ...
+%\supplementdetails[linktext={opt. text shown instead of the URL}, cite=DBLP:books/mk/GrayR93, subcategory={Description, Subcategory}, swhid={Software Heritage Identifier}]{General Classification (e.g. Software, Dataset, Model, ...)}{URL to related version} %linktext, cite, and subcategory are optional
+
+%\funding{(Optional) general funding statement \dots}%optional, to capture a funding statement, which applies to all authors. Please enter author specific funding statements as fifth argument of the \author macro.
+
+\acknowledgements{I want to thank \dots}%optional
+
+% \nolinenumbers %uncomment to disable line numbering
+
+\graphicspath{{latex/publication_opodis_2021/images/}}
+
+
+%Editor-only macros:: begin (do not touch as author)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\EventEditors{Akke Toeter}
+\EventNoEds{2}
+\EventLongTitle{}
+\EventShortTitle{TruSec}
+\EventAcronym{}
+\EventYear{2021}
+\EventDate{December 23, 2021}
+\EventLocation{Delft, Nijmegen}
+\EventLogo{}
+\SeriesVolume{2}
+\ArticleNo{2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+\input{chapters/1_introduction.tex}
+\input{chapters/2_protocol.tex}
+\input{chapters/3_implementation.tex}
+\input{chapters/4_discussion.tex}%\newpage
+\input{chapters/5_questions.tex}%\newpage
+\input{chapters/6_planning.tex}%\newpage
+\input{chapters/7_conclusion.tex}
+%\bibliography{references.bib}
+ 
+
+ \end{document}
