@@ -57,16 +57,30 @@ compile_diagrams_in_dir_relative_to_root(
 )
 
 
-# Export PlantUML text files to LaTex.
+# Export dynamic PlantUML text files to LaTex.
 export_diagrams_to_latex(
     path_to_dynamic_gantts,
     gantt_extension,
     dynamic_diagram_output_dir_relative_to_root,
 )
 
-# Export PlantUML diagram images to LaTex.
+# Export dynamic PlantUML diagram images to LaTex.
 export_diagrams_to_latex(
     path_to_dynamic_gantts,
+    diagram_extension,
+    dynamic_diagram_output_dir_relative_to_root,
+)
+
+# Export static PlantUML text files to LaTex.
+export_diagrams_to_latex(
+    path_to_static_gantts,
+    gantt_extension,
+    dynamic_diagram_output_dir_relative_to_root,
+)
+
+# Export static PlantUML diagram images to LaTex.
+export_diagrams_to_latex(
+    path_to_static_gantts,
     diagram_extension,
     dynamic_diagram_output_dir_relative_to_root,
 )
