@@ -81,10 +81,10 @@ export_diagrams_to_latex(
 ## Export code to LaTex.
 # TODO: verify whether the latex/{project_name}/Appendices folder exists before exporting.
 # TODO: verify whether the latex/{project_name}/Images folder exists before exporting.
-export_code_to_latex(main_latex_filename, project_name)
+#export_code_to_latex(main_latex_filename, project_name)
 
 
 ## Compile the accompanying LaTex report.
-compile_latex(True, project_name, True)
+#compile_latex(True, project_name, True)
 
 print(f"\n\nDone.")
