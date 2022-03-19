@@ -3,11 +3,13 @@
 This section presents the protocol and explains how it can improve the way vulnerability disclosures are completed for deterministically verifiable zero-day exploits.
 
 \subsection{Scope}\label{subsec:scope}
-For a specific type of vulnerability, some, to all of these concerns can be alleviated. The scope/applicability of the protocol is visualised in \cref{fig:protocol_scope}.
+The protocol can be applied to identify more vulnerabilities than deterministically verifiable zero-day exploits. Companies can also for the decentralised Virtual Machine and add a specific configuration, and add a bounty on that forked decentralised VM. This way, a hacker may leverage the particular configuration to find an exploit. This procedure also allows the protocol to identify some supply-chain attack vulnerabilities. For example, if an invalid certificate is used to compromise the device.
+
+However, both misconfiguration and supply chain attack partially deviate from the main benefit of collective nature of the protocol. For example, it may incentivise hackers to focus efforts on particular configurations, that are not (necessarily) useful for other companies. However, at the same time, hackers could still opt to focus on the mutual elements of all forked decentralised virtual machines to collect the bounties with a single, more powerful exploit. This scope/applicability of the protocol is visualised in \cref{fig:protocol_scope}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.50\textwidth]{images/plantuml/scope.png}
-    \caption{(See notes) The proposed TruSec protocol is not suited to deal with social engineering attacks, nor is it ideal for misconfiguration exploits and/or supply-chain attacks. Instead, it is designed to increase the rate of discovery of zero-day exploits. Note, we acknowledge that attacks can be, and often are, a combination of the types.}
+    \caption{The proposed TruSec protocol is not suited to deal with social engineering attacks, nor is it ideal for misconfiguration exploits and/or supply-chain attacks. Instead, it is designed to increase the rate of discovery of deterministically verifiable zero-day exploits. Note, we acknowledge that attacks can be, and often are, a combination of the types.}
     \label{fig:protocol_scope}
 \end{figure}
 
