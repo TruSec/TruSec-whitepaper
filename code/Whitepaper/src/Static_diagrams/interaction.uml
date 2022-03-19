@@ -1,33 +1,42 @@
 @startuml
 actor "Big Company A"
 actor "Small Company B"
-'participant "Decentralised VM\n Ubuntu+MongoDB\n(Honeypot)" as stack #99FF99
-collections "Decentralised VM\n Ubuntu+MongoDB\n(Honeypot)" as stack #99FF99
-participant "Decentralised Locker" as ipfs #99FF99
-participant "Exploit written by WhiteHat Hacker" as attack #99FF99
+collections  "=Decentralised VM\n(DVM) forks with:\n Ubuntu+MongoDB\n----\n DVM smart contract"  as DVM #99FF99
+participant "=Zero-day Exploit\n written by WhiteHat Hacker\n----\nDecentralised Encrypted Locker\n (DEL)" as DEL #97c0fe
+participant "=Exploit smart contract" as exploit #ffcccb
 actor "WhiteHat Hacker" #white
 
-"Big Company A"->"stack": Deposit $5000 into decentralised VM contract.\n Specify 10 days responsible disclosure.
-"Big Company A"->"stack": Deposits their public key\n into decentralised VM contract.
-"Small Company B"->"stack": Deposit $200 into decentralised VM contract.\n Specify 15 days responsible disclosure.
-"Small Company B"->"stack": Deposits public key into\n decentralised VM contract.
-"WhiteHat Hacker"->"stack": WhiteHat Hacker scans the blockchain for decentralised virtual machine contracts that have a bounty.
-"stack"->"WhiteHat Hacker": WhiteHat Hacker reads $5200 bounty for exploit on Ubuntu and/or MongoDB.
-"WhiteHat Hacker"->"attack": WhiteHat Hacker writes\n decentralised attack.
-"attack"->"ipfs": WhiteHat Hacker deploys\n decentralised attack to\n decentralised locker.
-"attack"->"ipfs": WhiteHat Hacker adds\n locker access for private\n key belonging to public\n key of company A.
-"attack"->"ipfs": WhiteHat Hacker adds\n locker access for private\n key belonging to public\n key of company B.
-"WhiteHat Hacker"->"stack": "WhiteHat Hacker refers decentralised VM contract\n to decentralised locker that contains the attack.
-"stack"->"Big Company A": Reads notification on deployed attack against their staked decentralised VM.
-"stack"->"Small Company B": Reads notification on deployed attack against their staked decentralised VM.
-"stack"->"Big Company A": Accesses the locker with their private key.
-"stack"->"Small Company B": Accesses the locker with their private key.
-"ipfs"->"Big Company A": Look at exploit to patch their systems it within responsible disclosure time.
-"ipfs"->"Small Company B": Look at exploit to patch their systems it within responsible disclosure time.
-"ipfs"->"stack": The locker opens up and publically\n attacks decentralised VM  after responsible disclosure periods. 
-"ipfs"->"stack": The attack changes the secret in the in the decentralised VM demonstrating write-access.
-"ipfs"->"stack": The attack deposits gas costs for evaluation, and asks for evaluation.
-"ipfs"->"stack": The DVM contract triggers an evaluation of the attack on the DVM.
-"ipfs"->"stack": After attack evaluation, the DVM verifies if the content of the secret has been modified. If yes, gets the payout address from the locker.
-"stack"->"WhiteHat Hacker": DVM contract pays out hacker.
+autonumber
+"Big Company A"->"DVM": Deposit into DVM smart contract:\n -$5000\n -public key\n -10 days responsible disclosure time
+"Big Company A"->"DVM": Deposit into DVM smart contract:\n -$200\n -public key\n -15 days responsible disclosure time
+
+"WhiteHat Hacker"->"DVM": WhiteHat Hacker scans blockchain\n for DVM smart contracts with bounty.
+"DVM"->"WhiteHat Hacker": WhiteHat Hacker reads $5200 bounty\n for exploit on Ubuntu and/or MongoDB.
+"WhiteHat Hacker"<-"WhiteHat Hacker": WhiteHat Hacker writes\n zero-day exploit.
+"WhiteHat Hacker"->"DEL": Deposit into DEL:\n -exploit\n -public key company A\n -public key company B
+"WhiteHat Hacker"->"DVM": "WhiteHat Hacker refers decentralised VM contract\n to decentralised locker that contains the exploit.
+"WhiteHat Hacker"->"exploit": Create smart contract, deposit:\n -evaluation gas costs\n -reference to DVM Smart Contract.
+"exploit"->"DVM": Reach out to DVM smart contract, ask for evaluation.
+"DVM"->"exploit": Read max responsible disclosure time.
+"exploit"<-"exploit": Wait for max responsible disclosure time.
+
+
+"DVM"->"DEL": Verify exploit is locked to public.
+"DVM"->"DEL": Verify exploit is accessible with private key A.
+"DVM"->"DEL": Verify exploit is accessible with private key B.
+
+
+"DVM"->"Big Company A": Notice attack.
+"DVM"->"Small Company B": Notice attack.
+"DVM"->"Big Company A": Get exploit using private key A.
+"DVM"->"Small Company B": Get exploit using private key B.
+"Big Company A"->"Big Company A": Patch their systems against exploit.
+"Small Company B"->"Small Company B": Patch their systems against exploit.
+
+"exploit"->"DEL": Exploit smart contract\n opens DEL publically.
+"DEL"->"DVM": DVM gets public exploit from DEL.
+"DVM"->"DVM": DVM evaluates exploit.
+"DVM"->"DVM": Exploit changes secret in DVM (forks).
+"DVM"->"DVM": DVM smart contract reads DVM secret.
+"DVM"->"exploit": If secret is compromised,\n DVM smart contract pays\n exploit smart contract.
 @enduml

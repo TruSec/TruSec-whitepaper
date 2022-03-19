@@ -11,6 +11,8 @@ import subprocess
 from os.path import abspath
 
 from .helper_dir_file_edit import get_dir_filelist_based_on_extension
+from .plantuml_get_package import got_java_file
+
 
 
 def compile_diagrams_in_dir_relative_to_root(
@@ -37,6 +39,9 @@ def compile_diagrams_in_dir_relative_to_root(
     Raises:
         Nothing
     """
+    # Verify the PlantUML .jar file is gotten.
+    got_java_file(jar_path_relative_from_root)
+
     diagram_text_filenames = get_dir_filelist_based_on_extension(
         input_dir_relative_to_root, extension
     )
