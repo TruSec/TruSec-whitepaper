@@ -2,6 +2,11 @@
 # outputting the results to latex.
 import argparse
 
+# Project code imports.
+from .create_planar_triangle_free_graph import get_graph
+from .neumann import compute_mtds
+
+# Data export imports.
 from .export_data.Export_manager import Export_manager
 from .export_data.latex_export_code import export_code_to_latex
 from .export_data.latex_compile import compile_latex
@@ -9,6 +14,8 @@ from .export_data.plantuml_generate import generate_all_dynamic_diagrams
 from .export_data.plantuml_compile import compile_diagrams_in_dir_relative_to_root
 from .export_data.plantuml_to_tex import export_diagrams_to_latex
 
+
+# TODO: move into separate argument parser.
 # Instantiate the parser
 parser = argparse.ArgumentParser(description="Optional app description")
 
@@ -44,19 +51,31 @@ parser.add_argument(
     help="A boolean indicating if code that exports code is exported to latex.",
 )
 
+parser.add_argument(
+    "--g",
+    dest="graph_from_file",
+    action="store_true",
+    help="boolean flag, determines whether energy analysis graph is created from file ",
+)
+parser.add_argument("infile", nargs="?", type=argparse.FileType("r"))
+
+
+parser.set_defaults(
+    infile=None, graph_from_file=False,
+)
+
+# Load the arguments that are given.
 args = parser.parse_args()
 
-print("Argument values:")
-print(args.l)
-print(args.dd)
-print(args.sd)
-print(args.c2l)
-print(args.ec2l)
+# Run main code.
+G = get_graph(args, False)
+compute_mtds(G)
 
+print(f"Done with main code.")
+exit()
 
-# if args.pos_arg > 10:
-#    parser.error("pos_arg cannot be larger than 10")
-
+# TODO: move to export_data
+# Specify hardcoded data.
 print(f"Hi, I'll be running the main code, and I'll let you know when I'm done.")
 root_dir = "new_whitepaper"
 main_latex_filename = "report.tex"
@@ -152,6 +171,6 @@ elif args.ec2l:
 
 ## Compile the accompanying LaTex report.
 if args.l:
-    #compile_latex(True, True)
+    compile_latex(True, True)
     print("")
 print(f"\n\nDone.")
