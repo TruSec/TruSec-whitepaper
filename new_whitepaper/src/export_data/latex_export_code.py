@@ -4,6 +4,8 @@ import shutil
 
 from .helper_dir_file_edit import get_all_files_in_dir_and_child_dirs
 from .helper_dir_file_edit import get_filepaths_in_dir
+from .helper_dir_file_edit import file_contains
+
 
 
 def export_code_to_latex(main_latex_filename, include_export_code):
@@ -24,14 +26,11 @@ def export_code_to_latex(main_latex_filename, include_export_code):
     latex_dir = script_dir + "/../../latex/"
     appendix_dir = f"{latex_dir}Appendices/"
     path_to_main_latex_file = appendix_dir = f"{latex_dir}{main_latex_filename}"
-    # root_dir = script_dir[0 : script_dir.rfind(f"/../")]
     root_dir = script_dir + "/../../"
     src_dir = script_dir + "/../"
-    print(f"path_to_main_latex_file={path_to_main_latex_file}")
-    print(f"appendix_dir={appendix_dir}")
-    print(f"root_dir={root_dir}")
-    print(f"src_dir={src_dir}")
-    print(f"script_dir={script_dir}")
+
+    # Verify the latex file supports auto-generated python appendices.
+    verify_latex_supports_auto_generated_appendices(path_to_main_latex_file)
 
     # Get paths to files containing project python code.
     python_filepaths = get_filepaths_in_dir("py", src_dir, ["__init__.py"])
@@ -128,6 +127,17 @@ def export_code_to_latex(main_latex_filename, include_export_code):
     print(f"\n\n")
     overwrite_content_to_file(updated_main_tex_code, path_to_main_latex_file)
 
+def verify_latex_supports_auto_generated_appendices(path_to_main_latex_file):
+    print("hi")
+    determining_overleaf_home_line='\def\overleafhome{/tmp}% change as appropriate'
+    begin_apendices_line="\\begin{appendices}"
+    print(f'determining_overleaf_home_line={determining_overleaf_home_line}')
+    print(f'begin_apendices_line={begin_apendices_line}')
+
+    if not file_contains(path_to_main_latex_file,determining_overleaf_home_line):
+        raise Exception(f"Error, {path_to_main_latex_file} does not contain:\n\n{determining_overleaf_home_line}\n\n so this Python code cannot export the code as latex appendices.")
+    if not file_contains(path_to_main_latex_file,determining_overleaf_home_line):
+        raise Exception(f"Error, {path_to_main_latex_file} does not contain:\n\n{begin_apendices_line}\n\n so this Python code cannot export the code as latex appendices.")
 
 def create_appendices_latex_code(
     main_latex_filename,
@@ -169,7 +179,6 @@ def append_latex_inclusion_command(
     appendices_of_all_types,
     is_from_root_dir,
     main_appendix_inclusion_lines,
-    project_name,
 ):
     """
 
@@ -768,7 +777,7 @@ def get_index_of_substring_in_list(lines, target_substring):
                 return i
 
 
-def update_appendix_tex_code(appendix_filename, is_from_root_dir, project_name):
+def update_appendix_tex_code(appendix_filename, is_from_root_dir):
     """Returns the latex command that includes an appendix .tex file in an appendix environment
     as can be used in the main tex file.
 

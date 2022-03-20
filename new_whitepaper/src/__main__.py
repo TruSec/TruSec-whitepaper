@@ -59,7 +59,7 @@ print(args.ec2l)
 
 print(f"Hi, I'll be running the main code, and I'll let you know when I'm done.")
 root_dir = "new_whitepaper"
-main_latex_filename = "main.tex"
+main_latex_filename = "report.tex"
 export_data_dirname = "export_data"
 path_to_export_data = f"src/{export_data_dirname}"
 append_export_code_to_latex = True
@@ -152,6 +152,6 @@ elif args.ec2l:
 
 ## Compile the accompanying LaTex report.
 if args.l:
-    compile_latex(True, True)
-
+    #compile_latex(True, True)
+    print("")
 print(f"\n\nDone.")

@@ -4,7 +4,7 @@ import subprocess
 from .helper_bash_commands import run_bash_command
 
 
-def compile_latex(await_compilation, project_name, verbose):
+def compile_latex(await_compilation, verbose):
     """
     Compiles the LaTex report of this project using its compile script.
 
