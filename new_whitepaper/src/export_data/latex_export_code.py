@@ -25,7 +25,7 @@ def export_code_to_latex(main_latex_filename, include_export_code):
     script_dir = get_script_dir()
     latex_dir = script_dir + "/../../latex/"
     appendix_dir = f"{latex_dir}Appendices/"
-    path_to_main_latex_file = appendix_dir = f"{latex_dir}{main_latex_filename}"
+    path_to_main_latex_file = f"{latex_dir}{main_latex_filename}"
     root_dir = script_dir + "/../../"
     src_dir = script_dir + "/../"
 
@@ -49,7 +49,7 @@ def export_code_to_latex(main_latex_filename, include_export_code):
     notebook_pdf_files_already_included_in_appendices = get_code_files_already_included_in_appendices(
         compiled_notebook_pdf_filepaths, appendix_dir, ".ipynb", root_dir,
     )
-
+    print(f'python_files_already_included_in_appendices={python_files_already_included_in_appendices}')
     # Get which appendices are still missing.
     missing_python_files_in_appendices = get_code_files_not_yet_included_in_appendices(
         python_filepaths, python_files_already_included_in_appendices, ".py"
@@ -59,20 +59,20 @@ def export_code_to_latex(main_latex_filename, include_export_code):
         notebook_pdf_files_already_included_in_appendices,
         ".pdf",
     )
-
+    print(f'missing_python_files_in_appendices={missing_python_files_in_appendices}')
     # Create the missing appendices.
     created_python_appendix_filenames = create_appendices_with_code(
         appendix_dir, missing_python_files_in_appendices, ".py", root_dir
     )
-
     created_notebook_appendix_filenames = create_appendices_with_code(
         appendix_dir, missing_notebook_files_in_appendices, ".ipynb", root_dir,
     )
+    print(f'created_python_appendix_filenames={created_python_appendix_filenames}')
 
     appendices = get_list_of_appendix_files(
         appendix_dir, compiled_notebook_pdf_filepaths, python_filepaths
     )
-
+    print(f'appendices={appendices}')
     main_tex_code, start_index, end_index, appendix_tex_code = get_appendix_tex_code(
         path_to_main_latex_file
     )
@@ -90,6 +90,8 @@ def export_code_to_latex(main_latex_filename, include_export_code):
             filter_appendices_by_type(appendices, "python"),
         )
     )
+    print(f'python_appendix_filenames={python_appendix_filenames}')
+    #exit()
     sorted_created_python_appendices = sort_python_appendices(
         filter_appendices_by_type(appendices, "python")
     )
@@ -120,11 +122,11 @@ def export_code_to_latex(main_latex_filename, include_export_code):
     updated_main_tex_code = substitute_appendix_code(
         end_index, main_tex_code, start_index, appendix_latex_code
     )
-    print(f"\n\n")
-    for line in updated_main_tex_code:
-        print(line)
+    #print(f"\n\n")
+    #for line in updated_main_tex_code:
+        #print(line)
     # print(f"updated_main_tex_code={updated_main_tex_code}")
-    print(f"\n\n")
+    #print(f"\n\n")
     overwrite_content_to_file(updated_main_tex_code, path_to_main_latex_file)
 
 def verify_latex_supports_auto_generated_appendices(path_to_main_latex_file):
@@ -155,7 +157,7 @@ def create_appendices_latex_code(
 
     """
     main_appendix_inclusion_lines = main_non_code_appendix_inclusion_lines
-    print(f"main_appendix_inclusion_lines={main_appendix_inclusion_lines}")
+    print(f"BEFORE main_appendix_inclusion_lines={main_appendix_inclusion_lines}")
 
     appendices_of_all_types = [python_appendices, notebook_appendices]
 
@@ -171,7 +173,7 @@ def create_appendices_latex_code(
     main_appendix_inclusion_lines = append_latex_inclusion_command(
         appendices_of_all_types, False, main_appendix_inclusion_lines,
     )
-    print(f"main_appendix_inclusion_lines={main_appendix_inclusion_lines}")
+    print(f"AFTER main_appendix_inclusion_lines={main_appendix_inclusion_lines}")
     return main_appendix_inclusion_lines
 
 
@@ -191,7 +193,7 @@ def append_latex_inclusion_command(
     for appendix_type in appendices_of_all_types:
         for appendix in appendix_type:
             line = update_appendix_tex_code(
-                appendix.appendix_filename, is_from_root_dir, project_name
+                appendix.appendix_filename, is_from_root_dir
             )
             print(f"appendix.appendix_filename={appendix.appendix_filename}")
             main_appendix_inclusion_lines.append(line)
@@ -360,7 +362,9 @@ def get_list_of_appendix_files(
     """
     appendices = []
     appendices_paths = get_all_files_in_dir_and_child_dirs(".tex", appendix_dir)
-
+    print(f'appendix_dir={appendix_dir}')
+    print(f'appendices_paths={appendices_paths}')
+    #exit()
     for appendix_filepath in appendices_paths:
         appendix_type = "no_code"
         appendix_filecontent = read_file(appendix_filepath)
@@ -478,7 +482,6 @@ def check_if_appendix_contains_file(
     latex_relative_filepath = f"latex/../../{code_filepath[len(root_dir):]}"
     print(f"code_filepath={code_filepath}")
     print(f"latex_relative_filepath={latex_relative_filepath}")
-    exit()
     latex_command = get_latex_inclusion_command(extension, latex_relative_filepath)
     return get_line_of_latex_command(appendix_content, latex_command)
 
@@ -753,7 +756,7 @@ def get_appendix_tex_code(main_latex_filename):
 
     """
     main_tex_code = read_file(main_latex_filename)
-    print(f"main_tex_code={main_tex_code}")
+    #print(f"main_tex_code={main_tex_code}")
     start = "\\begin{appendices}"
     end = "\end{appendices}"
     # TODO: if last 4 characters before \end{appendices} match }}\\fi then don't prepend it,
@@ -787,7 +790,7 @@ def update_appendix_tex_code(appendix_filename, is_from_root_dir):
 
     """
     if is_from_root_dir:
-        left = f"\input{{latex/{project_name}/"
+        left = f"\input{{latex/"
     else:
         left = "\input{"
     middle = "Appendices/"
