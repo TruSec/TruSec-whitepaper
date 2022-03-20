@@ -19,10 +19,12 @@ def delete_directory_contents(self, folder):
         except Exception as e:
             print("Failed to delete %s. Reason: %s" % (file_path, e))
 
-def file_contains(filepath,substring):
+
+def file_contains(filepath, substring):
     with open(filepath) as f:
         if substring in f.read():
             return True
+
 
 def get_dir_filelist_based_on_extension(dir_relative_to_root, extension):
     """
