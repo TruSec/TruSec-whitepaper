@@ -744,6 +744,7 @@ def get_appendix_tex_code(main_latex_filename):
 
     """
     main_tex_code = read_file(main_latex_filename)
+    print(f"main_tex_code={main_tex_code}")
     start = "\\begin{appendices}"
     end = "\end{appendices}"
     # TODO: if last 4 characters before \end{appendices} match }}\\fi then don't prepend it,

@@ -140,12 +140,18 @@ if args.sd:
 
 
 ## Export code to LaTex.
-# TODO: verify whether the latex/{project_name}/Appendices folder exists before exporting.
-# TODO: verify whether the latex/{project_name}/Images folder exists before exporting.
-export_code_to_latex(main_latex_filename, append_export_code_to_latex)
+if args.ec2l:
+    # TODO: verify whether the latex/{project_name}/Appendices folder exists before exporting.
+    # TODO: verify whether the latex/{project_name}/Images folder exists before exporting.
+    export_code_to_latex(main_latex_filename, False)
+elif args.ec2l:
+    # TODO: verify whether the latex/{project_name}/Appendices folder exists before exporting.
+    # TODO: verify whether the latex/{project_name}/Images folder exists before exporting.
+    export_code_to_latex(main_latex_filename, append_export_code_to_latex)
 
 
 ## Compile the accompanying LaTex report.
-# compile_latex(True, project_name, True)
+if args.l:
+    compile_latex(True, True)
 
 print(f"\n\nDone.")
