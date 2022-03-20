@@ -1,5 +1,5 @@
 \PassOptionsToPackage{table}{xcolor}
-\documentclass[whitelogo]{latex/project8/tudelft-report}
+\documentclass[whitelogo]{new_whitepaper/latex/tudelft-report}
 %\documentclass[whitelogo]{tudelft-report}
 \usepackage{natbib}
 \usepackage{changes}
@@ -209,7 +209,7 @@ showstringspaces=false            %
 \author[tudelft-white]{\vspace{2em}Akke Toeter}
 \affiliation{Technische Universiteit Delft}
 %TODO :include detection of compilation platform
-\coverimage{latex/project8/cover1.jpeg}
+\coverimage{new_whitepaper/latex/cover1.jpeg}
 %\coverimage{cover2.jpg}
 %\coverimage{cover3.jpeg}
 
@@ -230,7 +230,7 @@ showstringspaces=false            %
 
 %% Include an optional title page.
 %TODO :include detection of compilation platform
-\input{latex/project8/title}
+\input{new_whitepaper/latex/title}
 
 %\input{preface}
 
@@ -269,22 +269,22 @@ showstringspaces=false            %
 % Local compilation
 
 % Include acronym list
-\input{latex/project8/wordlists/acronyms}
-\input{latex/project8/wordlists/glossary}
-\input{latex/project8/wordlists/nomenclature}
+\input{new_whitepaper/latex/wordlists/acronyms}
+\input{new_whitepaper/latex/wordlists/glossary}
+\input{new_whitepaper/latex/wordlists/nomenclature}
 % Include chapters.
-\input{latex/project8/chapters/1_intro}
-\input{latex/project8/chapters/2_functional_flow_diagram.tex}
-\input{latex/project8/chapters/3_functional_breakdown_diagram.tex}
-\input{latex/project8/chapters/4_requirements_discovery_tree.tex}
-\input{latex/project8/chapters/5_resource_allocation_budget_breakdown.tex}
-\input{latex/project8/chapters/6_technical_risk_assessment.tex}
-\input{latex/project8/chapters/7_design_option_structuring_tree.tex}
-\input{latex/project8/chapters/8_contingency_management.tex}
-\input{latex/project8/chapters/9_market_analysis.tex}
-\input{latex/project8/chapters/10_sustainable_development_management.tex}
-\input{latex/project8/chapters/11_reporting_and_quality_control.tex}
-\input{latex/project8/chapters/12_conclusion.tex}
+\input{new_whitepaper/latex/chapters/1_intro}
+\input{new_whitepaper/latex/chapters/2_functional_flow_diagram.tex}
+\input{new_whitepaper/latex/chapters/3_functional_breakdown_diagram.tex}
+\input{new_whitepaper/latex/chapters/4_requirements_discovery_tree.tex}
+\input{new_whitepaper/latex/chapters/5_resource_allocation_budget_breakdown.tex}
+\input{new_whitepaper/latex/chapters/6_technical_risk_assessment.tex}
+\input{new_whitepaper/latex/chapters/7_design_option_structuring_tree.tex}
+\input{new_whitepaper/latex/chapters/8_contingency_management.tex}
+\input{new_whitepaper/latex/chapters/9_market_analysis.tex}
+\input{new_whitepaper/latex/chapters/10_sustainable_development_management.tex}
+\input{new_whitepaper/latex/chapters/11_reporting_and_quality_control.tex}
+\input{new_whitepaper/latex/chapters/12_conclusion.tex}
 \fi
 
 %% Use letters for the chapter numbers of the appendices.
@@ -298,7 +298,7 @@ showstringspaces=false            %
 %\appendix
 %% Uncomment the following line when using the natbib package
 \bibliography{zotero.bib}
-%\bibliography{latex/project8/zotero.bib}
+%\bibliography{new_whitepaper/latex/zotero.bib}
 
 %% Uncomment the following line when using the biblatex package
 %\printbibliography
@@ -332,7 +332,7 @@ showstringspaces=false            %
 
 %\newpage
 \begin{appendices}
-\IfFileExists{latex/project8/report.tex}{\input{latex/project8/Appendices/AppA.tex} \newpage
+\IfFileExists{new_whitepaper/latex/report.tex}{\input{new_whitepaper/latex/Appendices/AppA.tex} \newpage
 }{\input{Appendices/AppA.tex}} \newpage
 \ifhidesourcecode{}\else{\IfFileExists{latex/report.tex}{\input{latex/Appendices/Auto_generated_py_App7.tex} \newpage
 \input{latex/Appendices/Auto_generated_py_App22.tex} \newpage
@@ -389,5 +389,4 @@ showstringspaces=false            %
 \input{Appendices/Auto_generated_py_App17.tex} \newpage
 \input{Appendices/Auto_generated_py_App16.tex} \newpage
 }}\fi\end{appendices}
-
 \end{document}
