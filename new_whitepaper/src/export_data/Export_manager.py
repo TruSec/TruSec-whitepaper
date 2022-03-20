@@ -10,9 +10,7 @@ class Export_manager:
 
         # PlantUML related variables
         self.plant_uml_java_filename = "plantuml.jar"
-        self.relative_plant_uml_java_filepath = (
-            f"src/{self.plant_uml_java_filename}"
-        )
+        self.relative_plant_uml_java_filepath = f"src/{self.plant_uml_java_filename}"
         self.diagram_dir = "Diagrams"
         self.static_diagram_dir = "Static_diagrams"
         self.src_to_diagram_path = f"{self.relative_src_filepath}{self.diagram_dir}/"

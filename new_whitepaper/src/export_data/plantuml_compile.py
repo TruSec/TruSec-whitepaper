@@ -14,7 +14,6 @@ from .helper_dir_file_edit import get_dir_filelist_based_on_extension
 from .plantuml_get_package import got_java_file
 
 
-
 def compile_diagrams_in_dir_relative_to_root(
     await_compilation,
     extension,
@@ -88,7 +87,9 @@ def execute_diagram_compilation_command(
     )
 
     # Generate command to compile the PlantUML diagram locally.
-    print(f'abs_jar_path={abs_jar_path}, abs_diagram_filepath={abs_diagram_filepath}\n\n')
+    print(
+        f"abs_jar_path={abs_jar_path}, abs_diagram_filepath={abs_diagram_filepath}\n\n"
+    )
     bash_diagram_compilation_command = (
         f"java -jar {abs_jar_path} -verbose {abs_diagram_filepath}"
     )
@@ -121,8 +122,7 @@ def execute_diagram_compilation_command(
 
 
 def assert_diagram_compilation_requirements(
-    jar_path_relative_from_root,
-    relative_filepath_from_root,
+    jar_path_relative_from_root, relative_filepath_from_root,
 ):
     """
     Asserts that the PlantUML .jar file used for compilation exists, and that

@@ -76,7 +76,15 @@ class Plot_to_tex:
 
     # plot graphs
     def plotMultipleLines(
-        self, x, y_series, x_label, y_label, label, filename, legendPosition, project_name
+        self,
+        x,
+        y_series,
+        x_label,
+        y_label,
+        label,
+        filename,
+        legendPosition,
+        project_name,
     ):
         """
 

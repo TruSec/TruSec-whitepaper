@@ -2,6 +2,7 @@ import os
 import shutil
 import glob
 
+
 def delete_directory_contents(self, folder):
     """
 
@@ -70,6 +71,7 @@ def dir_relative_to_root_exists(dir_relative_to_root):
             "Directory relative to root: {dir_relative_to_root} did not exist, nor did it exist."
         )
 
+
 def get_all_files_in_dir_and_child_dirs(extension, path, excluded_files=None):
     """Returns a list of the relative paths to all files within the some path that match
     the given file extension. Also includes files in child directories.
@@ -89,7 +91,8 @@ def get_all_files_in_dir_and_child_dirs(extension, path, excluded_files=None):
                     filepaths.append(r + "/" + file)
     return filepaths
 
-def get_filepaths_in_dir(extension,path,excluded_files=None):
+
+def get_filepaths_in_dir(extension, path, excluded_files=None):
     """Returns a list of the relative paths to all files within the some path that match
     the given file extension. Does not include files in child_directories.
 
