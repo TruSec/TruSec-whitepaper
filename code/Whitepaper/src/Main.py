@@ -7,12 +7,12 @@ class Main:
     def __init__(self, project_name):
         # Path related variables
         self.project_name = project_name
-        self.relative_src_filepath = f"code/{project_name}/src/"
+        self.relative_src_filepath = f"src/"
 
         # PlantUML related variables
         self.plant_uml_java_filename = "plantuml.jar"
         self.relative_plant_uml_java_filepath = (
-            f"code/{project_name}/src/{self.plant_uml_java_filename}"
+            f"src/{self.plant_uml_java_filename}"
         )
         self.diagram_dir = "Diagrams"
         self.static_diagram_dir = "Static_diagrams"

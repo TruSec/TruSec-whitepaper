@@ -20,6 +20,9 @@ def generate_all_dynamic_diagrams(output_dir_relative_to_root):
 
     Raises:
     """
+    # Ensure output directory exists.
+    create_dir_relative_to_root_if_not_exists(output_dir_relative_to_root)
+
     # Create a example Gantt output file.
     filename_one, lines_one = create_trivial_gantt("trivial_gantt.uml")
     output_diagram_text_file(filename_one, lines_one, output_dir_relative_to_root)

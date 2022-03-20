@@ -3,7 +3,7 @@ import os
 import shutil
 
 
-def export_code_to_latex(main_latex_filename, project_name):
+def export_code_to_latex(main_latex_filename):
     """This function exports the python files and compiled pdfs of jupiter notebooks into the
     latex of the same project number. First it scans which appendices (without code, without
     notebooks) are already manually included in the main latex code. Next, all appendices
@@ -18,15 +18,18 @@ def export_code_to_latex(main_latex_filename, project_name):
 
     """
     script_dir = get_script_dir()
-    relative_dir = f"latex/{project_name}/"
-    appendix_dir = script_dir + "/../../../" + relative_dir + "Appendices/"
+    relative_dir = f"latex/"
+    appendix_dir = script_dir + relative_dir + "Appendices/"
     path_to_main_latex_file = (
-        f"{script_dir}/../../../{relative_dir}/{main_latex_filename}"
+        f"{script_dir}{relative_dir}/{main_latex_filename}"
     )
-    root_dir = script_dir[0 : script_dir.rfind(f"code/{project_name}")]
+    print(f'path_to_main_latex_file={path_to_main_latex_file}')
+    root_dir = script_dir[0 : script_dir.rfind(f"src")]
+    print(f'root_dir={root_dir}')
+    exit()
 
     # Get paths to files containing python code.
-    python_filepaths = get_filenames_in_dir("py", script_dir, ["__init__.py"])
+    python_filepaths = get_all_files_in_dir_and_child_dirs("py", script_dir, ["__init__.py"])
     compiled_notebook_pdf_filepaths = get_compiled_notebook_paths(script_dir)
 
     # Check which files are already included in the latex appendicess.
@@ -329,7 +332,7 @@ def get_compiled_notebook_paths(script_dir):
     :param script_dir: absolute path of this file.
 
     """
-    notebook_filepaths = get_filenames_in_dir(".ipynb", script_dir)
+    notebook_filepaths = get_all_files_in_dir_and_child_dirs(".ipynb", script_dir)
     compiled_notebook_filepaths = []
 
     # check if the jupyter notebooks were compiled
@@ -355,7 +358,7 @@ def get_list_of_appendix_files(
 
     """
     appendices = []
-    appendices_paths = get_filenames_in_dir(".tex", appendix_dir)
+    appendices_paths = get_all_files_in_dir_and_child_dirs(".tex", appendix_dir)
 
     for appendix_filepath in appendices_paths:
         appendix_type = "no_code"
@@ -422,7 +425,7 @@ def get_filename_from_latex_inclusion_command(
     )
 
 
-def get_filenames_in_dir(extension, path, excluded_files=None):
+def get_all_files_in_dir_and_child_dirs(extension, path, excluded_files=None):
     """Returns a list of the relative paths to all files within the some path that match
     the given file extension.
 
@@ -454,7 +457,7 @@ def get_code_files_already_included_in_appendices(
     :param root_dir: The root directory of this repository.
 
     """
-    appendix_files = get_filenames_in_dir(".tex", appendix_dir)
+    appendix_files = get_all_files_in_dir_and_child_dirs(".tex", appendix_dir)
     contained_codes = []
     for code_filepath in absolute_code_filepaths:
         for appendix_filepath in appendix_files:
@@ -715,7 +718,7 @@ def get_auto_generated_appendix_filenames_of_specific_extension(
     appendices_of_extension_type = []
 
     # get all appendices
-    appendix_files = get_filenames_in_dir(".tex", appendix_dir)
+    appendix_files = get_all_files_in_dir_and_child_dirs(".tex", appendix_dir)
 
     # get appendices of particular extention type
     for appendix_filepath in appendix_files:

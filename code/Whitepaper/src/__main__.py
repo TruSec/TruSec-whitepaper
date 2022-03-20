@@ -20,9 +20,9 @@ gantt_extension = ".uml"
 diagram_extension = ".png"
 
 # Specify paths relative to root.
-jar_path_relative_from_root = f"code/{project_name}/src/plantuml.jar"
-path_to_dynamic_gantts = f"code/{project_name}/src/Diagrams/Dynamic"
-path_to_static_gantts = f"code/{project_name}/src/Static_diagrams"
+jar_path_relative_from_root = f"src/plantuml.jar"
+path_to_dynamic_gantts = f"src/Diagrams/Dynamic"
+path_to_static_gantts = f"src/Static_diagrams"
 dynamic_diagram_output_dir_relative_to_root = (
     f"latex/{project_name}/Images/Diagrams"
 )
@@ -36,7 +36,7 @@ main = Main(project_name)
 
 ## PlantUML
 # Generate PlantUML diagrams dynamically (using code).
-#generate_all_dynamic_diagrams(f"code/{project_name}/src/Diagrams/Dynamic")
+#generate_all_dynamic_diagrams(f"src/Diagrams/Dynamic")
 
 # Compile dynamically generated PlantUML diagrams to images.
 #compile_diagrams_in_dir_relative_to_root(
