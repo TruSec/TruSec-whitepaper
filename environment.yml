@@ -1,0 +1,39 @@
+# run: conda env create --file environment.yml
+# include new packages: conda env update --file environment.yml
+name: dnc
+channels:
+  - conda-forge
+  - conda
+dependencies:
+- anaconda
+- nb_conda
+- conda:
+# Run python tests.
+  - pytest=6.1.2
+# Convert notebooks to pdf.
+  - nbconvert
+  - matplotlib
+# Support notebooks.
+  - nb_conda
+# Visualise graphs for PlantUML
+  - graphviz
+# Run graph software quickly
+  - networkx
+- pip
+- pip:
+# Compile pdf from python.
+  - pdflatex
+# Write unit tests on Jupyter notebooks.
+  - testbook
+# Auto generate docstrings
+  - pyment
+# Auto generate documentation.
+  - pdoc3
+# Code formatting compliance
+  - black
+# Generate diagrams.
+  - plantuml
+# Identify and remove dead code.
+  - vulture
+# Get PlantUML .jar file.
+  - requests
