@@ -18,12 +18,12 @@ rectangle "Attack Surfaces Covered by TruSec Protocol" {
 	}
         
 		social -right[hidden]-> other
-		social-down[hidden]->supplychain
+		social -down[hidden]-> supplychain
 		
-		supplychain-right[hidden]->miscon
+		supplychain -right[hidden]-> miscon
 		
-		miscon-down[hidden]->zero
-		supplychain-down[hidden]->zero
+		miscon -down[hidden]-> zero
+		supplychain -down[hidden]-> zero
 
 }
 @enduml
