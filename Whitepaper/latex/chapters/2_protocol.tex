@@ -57,10 +57,13 @@ The protocol is shown in \cref{fig:interaction}.
 
 
 
-\subsection{\Cref{fig:interaction} notes}
+\subsubsection{\Cref{fig:interaction} notes}
 With respect to \cref{fig:interaction}, the following notes are made:
 \begin{enumerate} 
     \item The attack written by the ethical hacker should be accessible on chain, such that everyone can verify that the attack indeed compromises the decentralised VM/honeypot. This is critical for the automatic payout.
     \item The decentralised locker is used to prevent malicious hackers to inspect/copy the attack before the responsible disclosure period is over.
-    \item It would be better if the contract specifies the locker location, allowing the staking companies to actively check if an attack is found, instead of the attack reaching out to the honeypot. This is because the latter could attract unwanted attention. However, these are currently considered implementation details.
+    \item It would be better if the DVM smart contract specifies the locker location, while granting hackers write-access, and read-access only to (certified) stakeholders. This would prevent other hackers from knowing there is a vulnerability discovered in a certain software stack before the responsible disclosure period is over. We expect such a signal might attract unwanted attention. However, at the time of writing, no mechanism is designed that would prevent people from determining whether a hacker has deployed an attack, even if it is encrypted, whilst still allowing stakeholders to access/read the attack within the responsible disclosure. This weakness is discussed in \cref{sec:discussion}.
 \end{enumerate}
+
+\subsection{Added Value}
+The protocol allows companies to show their users how secure their open sources software stacks are against deterministically verifiable zero-day exploits. This can be done by showing the users how much money is "staked" on the security of their respective systems. This simplifies the comparison that customers can make between the security of companies against deterministically verifiable zero-day exploits. Additionally, companies (as well as the users of these open source software stacks) can re-adjust their funds and resource allocations regarding cyber-security based on this insight. This mechanism could, over multiple cycles perhaps result in a more predictable zero-day exploit landscape.
