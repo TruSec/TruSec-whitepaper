@@ -8,7 +8,11 @@ The protocol can be applied to identify more vulnerabilities than deterministica
 However, both misconfiguration and supply chain attack partially deviate from the main benefit of collective nature of the protocol. For example, it may incentivise hackers to focus efforts on particular configurations, that are not (necessarily) useful for other companies. However, at the same time, hackers could still opt to focus on the mutual elements of all forked decentralised virtual machines to collect the bounties with a single, more powerful exploit. This scope/applicability of the protocol is visualised in \cref{fig:protocol_scope}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.50\textwidth]{latex/Images/Diagrams/scope.png}
+    \ifx\homepath\overleafhome
+        \includegraphics[width=0.50\textwidth]{Images/Diagrams/scope.png}
+    \else
+        \includegraphics[width=0.50\textwidth]{latex/Images/Diagrams/scope.png}
+    \fi
     \caption{The proposed TruSec protocol is not suited to deal with social engineering attacks, nor is it ideal for misconfiguration exploits and/or supply-chain attacks. Instead, it is designed to increase the rate of discovery of deterministically verifiable zero-day exploits. Note, we acknowledge that attacks can be, and often are, a combination of the types.}
     \label{fig:protocol_scope}
 \end{figure}
@@ -39,7 +43,12 @@ The presented protocol does not provide a insight in the complete security of a 
 The protocol is shown in \cref{fig:interaction}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{latex/Images/Diagrams/interaction.png}
+    \ifx\homepath\overleafhome
+        \includegraphics[width=1.0\textwidth]{Images/Diagrams/interaction.png}
+    \else
+        \includegraphics[width=1.0\textwidth]{latex/Images/Diagrams/interaction.png}
+    \fi
+    
     \caption{Visualisation of the interaction of the TruSec protocol. This is an ever-lasting cycle, where at the end of the process, companies can re-deploy the patched decentralised stack, and allocate new funds. Whitehat hackers can scan for new attacks.}
     \label{fig:interaction}
 \end{figure}
