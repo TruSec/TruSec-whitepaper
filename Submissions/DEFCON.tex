@@ -58,7 +58,7 @@ https://www.linkedin.com/in/akke-t
 No
 
 %NEW! What do you bring to the table, how will you or your presentation(s) contribute a new perspective to the content at DEF CON? (Please answer for each speaker &/or panel members.)
-We intend to present a protocol that can solve 3 problems:
+We intend to present a protocol that can improve 3 aspects of vulnerability disclosures:
 0. Ambiguity is removed in bounty payouts to ethical hackers for deterministically verifiable zero-day exploits.
 1. Companies gain quantitative insight in the level of security of staked open source stacks against zero-day exploits.
 2. Manual labour of cybersecurity triage can be eliminated for deterministically verifiable zero-day exploits.
@@ -88,14 +88,14 @@ The presented protocol is proposed to be implemented using fully open source cod
 %Is it a full tool suite, a plugin, proof of concept exploit, update to existing tool, or something else?
 We present a protocol without implementation.
 %Is the tool currently public?
-A whitepaper will be publicised.
+A whitepaper will be publicised. % TODO: include reference to attachment.
 %What language is the tool written in?
 Not applicable.
 %Please introduce your tool briefly and explain what it does:
 The protocol allows companies to stake decentralised virtual machines with open source software stacks, whilst allowing hackers to deploy an attack to those decentralised VM's and automatically retrieve the bounty.
 
 %Are you releasing a new exploit? Yes or No
-No
+No.
 %If you are releasing vulnerabilities, please break them down and abstract as a vulnerability database would. Include the vendor(s), product(s), and version(s) affected here:
 Not applicable.
 
@@ -122,7 +122,7 @@ Yes
 %(not to exceed 1337 characters):
 We present a protocol that collectivises security bounties for deterministically verifiable zero-day exploits(DVZEs). It helps hackers retrieve bounties without ambiguity and removes subjectivity and manual labour of triage processes for those bounties. Companies can show customers how secure their open source software is, in terms of dollars staked on the software.
 
-Companies and users can pool bounties on open-source security stacks in decentralised virtual machines that contain a read and/or write secret. They can also specify a minimum responsible disclosure duration as well as a public key. Next, hackers can submit an attack to such a decentralised VM (DVM), by storing it in a decentralised encrypted locker (DEL), and notify the DVM of its presence. Once the stakeholders see this notification, (along with the rest of the world), they can use their private key to retrieve the attack from the DEL (before the rest of the world). For each bounty placed on the DVM, a call is made to the DEL just before the end of the accompanying responsible disclosure time. This call verifies that the attack is still encrypted. After the respective responsible disclosure periods have passed, the DEL is decrypted and the attack is executed. Successful attacks compromise the DVM read/write secret, triggering bounty hunter payout.
+Companies and users can pool bounties on open-source security stacks in decentralised virtual machines (DVMs) that contain a read and/or write secret. They can also specify a minimum responsible disclosure duration as well as a public key. Next, hackers can submit an attack to such a DVM, by storing it in a decentralised encrypted locker (DEL), and notify the DVM of its presence. Once the stakeholders see this notification, (along with the rest of the world), they can use their private key to retrieve the attack from the DEL (before the rest of the world). For each bounty placed on the DVM, a call is made to the DEL just before the end of the accompanying responsible disclosure time. This call verifies that the attack is still encrypted. After the respective responsible disclosure periods have passed, the DEL is decrypted and the attack is executed. Successful attacks compromise the DVM read/write secret, triggering bounty hunter payout.
 
 %Note: Your abstract will be used for the website and printed materials. Summarize what your presentation will cover. Attendees will read this to get an idea of what they should know before your presentation, and what they will learn after. Use this to inform attendees about how technical your talk is, what tools will be used, what materials to read in advance to get the most out of your presentation. This abstract is the primary way people will be drawn to your session, but should not give them the entire content of the talk. We request you keep your abstract well over 140 characters, but at or under the 1337 maximum.
 
@@ -150,9 +150,10 @@ VI. Cover protocol attacks by malicious actors, and accompanying incentives.
 VII. Mention weaknesses of protocol: 
 A. Anyone can see that a zero-day exists (not what it is). 
 B. Limited vulnerability scope due to deterministic verifiability requirement. 
-C. May incentivise companies to convey a false sense of security by overemphasising the numbers, instead of providing a full picture including misconfigurations, supply-chain attacks, social engineering etc.
-VII. Summarise based on which assumptions this protocol can improve market efficiency for deterministically verifiable zero-day exploits. 
+C. May incentivise companies to convey a false sense of security by overemphasising the numbers, instead of providing a full thread-landscape picture that includes misconfigurations, supply-chain attacks, social engineering etc.
+VII. Summarise based on which assumptions this protocol can improve market efficiency for deterministically verifiable zero-day exploit disclosures. 
 IX. Propose strategy to move forward to implementation.
+IIX. Ask critical feedback/questions/suggestions.
 
 %
 %Good Outlines are discussed here:
@@ -170,7 +171,7 @@ IX. Propose strategy to move forward to implementation.
 %WHY DEF CON?:
 %Note: This is your opportunity to directly address the DEF CON review board as to why you think your talk is good for our hacker con. More and more we are seeing submissions that are well suited for cyber security industry conferences, developer conferences, or local meetups but may not align with the board's view of the DEF CON spirit. The bumper sticker "Keep Infosec out of Hacking" comes to mind. We get many great submissions but they aren't always aimed at the 30,000 hackers at our con. This frequently results in the review board saying "Unfortunately, this is not a DEF CON talk". DEF CON is a hacking con, so how does your content fit in to that culture, spirit, and subject matter?
 %
-We hope to make the life of hackers a bit simpler. In particular, there is no more discontent about triage, there is no question on legality, attacks can be submitted anonymously, and there are no more employees of companies that need to be convinced of the importance/impact of the vulnerability.
+We hope to make the life of hackers a bit simpler. In particular, there is no more discontent about triage, there is no question on legality, attacks can be submitted anonymously, and there are no more employees of companies that need to be convinced of the importance/impact of the vulnerability after discovery.
 Additionally, we hope that wide-scale adoption of this protocol shows the world that the security of open source software against zero-day exploits, is only as strong as its weakest link, by repeatedly putting a price tag on that weakest link. Such a price tag may make it easier for companies to allocate (more) funds into cybersecurity, we hope some of these funds eventually reach (more) hackers.
 
 %SCHEDULING AND EQUIPMENT REQUIREMENTS
