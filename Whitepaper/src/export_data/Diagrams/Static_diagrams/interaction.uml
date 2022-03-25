@@ -2,20 +2,20 @@
 actor "Big Company A"
 actor "Small Company B"
 collections  "=Decentralised VM\n(DVM) forks with:\n Ubuntu+MongoDB\n----\n DVM smart contract"  as DVM #99FF99
-participant "=Zero-day Exploit\n written by WhiteHat Hacker\n----\nDecentralised Encrypted Locker\n (DEL)" as DEL #97c0fe
+participant "=Zero-day Exploit\n written by Ethical Hacker\n----\nDecentralised Encrypted Locker\n (DEL)" as DEL #97c0fe
 participant "=Exploit smart contract" as exploit #ffcccb
-actor "WhiteHat Hacker" #white
+actor "Ethical Hacker" #white
 
 autonumber
 "Big Company A"->"DVM": Deposit into DVM smart contract:\n -$5000\n -public key\n -10 days responsible disclosure time
 "Big Company A"->"DVM": Deposit into DVM smart contract:\n -$200\n -public key\n -15 days responsible disclosure time
 
-"WhiteHat Hacker"->"DVM": WhiteHat Hacker scans blockchain\n for DVM smart contracts with bounty.
-"DVM"->"WhiteHat Hacker": WhiteHat Hacker reads $5200 bounty\n for exploit on Ubuntu and/or MongoDB.
-"WhiteHat Hacker"<-"WhiteHat Hacker": WhiteHat Hacker writes\n zero-day exploit.
-"WhiteHat Hacker"->"DEL": Deposit into DEL:\n -exploit\n -public key company A\n -public key company B
-"WhiteHat Hacker"->"DVM": "WhiteHat Hacker refers decentralised VM contract\n to decentralised locker that contains the exploit.
-"WhiteHat Hacker"->"exploit": Create smart contract, deposit:\n -evaluation gas costs\n -reference to DVM Smart Contract.
+"Ethical Hacker"->"DVM": Ethical Hacker scans blockchain\n for DVM smart contracts with bounty.
+"DVM"->"Ethical Hacker": Ethical Hacker reads $5200 bounty\n for exploit on Ubuntu and/or MongoDB.
+"Ethical Hacker"<-"Ethical Hacker": Ethical Hacker writes\n zero-day exploit.
+"Ethical Hacker"->"DEL": Deposit into DEL:\n -exploit\n -public key company A\n -public key company B
+"Ethical Hacker"->"DVM": "Ethical Hacker refers decentralised VM contract\n to decentralised locker that contains the exploit.
+"Ethical Hacker"->"exploit": Create smart contract, deposit:\n -evaluation gas costs\n -reference to DVM Smart Contract.
 "exploit"->"DVM": Reach out to DVM smart contract, ask for evaluation.
 "DVM"->"exploit": Read max responsible disclosure time.
 "exploit"<-"exploit": Wait for max responsible disclosure time.
