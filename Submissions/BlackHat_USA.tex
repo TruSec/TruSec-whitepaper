@@ -26,14 +26,14 @@ Defence
 \subsection*{Format}
 TBD dropdown, after speaker is submitted.
 % TODO: Choose presentation duration (OR):
-%30 minute 
+30 minute 
 %40-minute 
 \subsection*{Theme}
 TBD dropdown, after speaker is submitted.
 \subsection{Abstract (299/300 words) (Will be published)}
-We present a protocol aiming at collectivising security bounties for deterministically verifiable zero-day exploits (DVZEs). The protocol enables companies to show customers how secure their software is, in terms of dollars staked on their open-source software stack. It also helps ethical hackers retrieving their bounties without ambiguity. Additionally, subjectivity and manual labour of triage processes are eliminated for DVZEs.
+We present a protocol that collectivises security bounties for deterministically verifiable zero-day exploits. It enables companies to show customers how secure their software is, in terms of dollars staked on their open-source software stack. It also helps ethical hackers retrieving their bounties without ambiguity. Subjectivity and manual labour of triage-processes are eliminated for these exploits.
 
-The protocol allows companies and users (stakeholders) to pool bounties on open-source security stacks in decentralised virtual machines that contain a read and/or write secret. The stakeholders can also specify a minimum responsible disclosure duration as well as a public key. Next, an ethical hacker can submit an attack to such a decentralised VM (DVM), by storing it in a decentralised encrypted locker (DEL), and notifying the DVM of its presence. Once the stakeholders see this notification, (along with the rest of the world), they can use their private key to retrieve the attack from the DEL (before the rest of the world). For each bounty placed on the DVM, a call is made to the DEL just before the end of the accompanying responsible disclosure time. This call verifies that the attack is still encrypted. After the respective responsible disclosure periods have passed, the DEL is decrypted and the attack is executed. Successful attacks compromise the DVM read/write secret, triggering bounty hunter payout.
+The protocol companies and users(stakeholders) pool bounties on open-source security stacks in decentralised virtual machines (DVMs) containing read and/or write secrets. Stakeholders specify minimum responsible disclosure durations and a public key. Next, ethical hackers can submit an attack to such DVMs, by storing it in a decentralised encrypted locker (DEL), and notifying the DVM of its presence. Once the stakeholders see this notification, (along with the rest of the world), they can use their private key to retrieve the attack from the DEL (before the rest of the world). For each bounty placed on the DVM, a call is made to the DEL just before the end of the accompanying responsible disclosure time. This call verifies that the attack is still encrypted. After the respective responsible disclosure periods have passed, the DEL is decrypted and the attack is executed. Successful attacks compromise the DVM read/write secret, triggering bounty hunter payout.
 
 This protocol enables ethical hackers to know, before starting work on their exploit, when they will retrieve a payout and how large that payout will be for publishing their exploits, in a winner-take-all market. At the same time, it allows small companies to stake money on open-source security alongside industry giants. This provides a transparent insight on economically rational hackers in the open-source software zero-day exploits segment of the cyber-security market. An accompanying whitepaper presents more details.
 
@@ -46,27 +46,43 @@ This protocol enables ethical hackers to know, before starting work on their exp
 % Limited to open source only?
 
 \subsection{Presentation Outline}
-- State assumptions: 
+A. State assumptions: 
 0. Mention why we assume the world could benefit from seeing how much money is staked on the security of all open source software stacks. 
 1. Indicate we assume that some ethical hackers may experience some difficulties in retrieving their payout as part of a responsible disclosure protocol.
-- Indicate this presentation merely presents a protocol, not an implementation.
-- Mention the protocol is intended to be open source.
-- Explain protocol using a visualisation of stakeholder and hacker interaction on the decentralised network.
-% TODO: make detailed.
-- Cover protocol attacks by malicious actors, and accompanying incentives.
-% TODO: make detailed.
-- Mention weaknesses of protocol: 
+
+B. Indicate this presentation merely presents a protocol, not an implementation.
+
+C. Mention the protocol is intended to be open source.
+
+D. Explain protocol using a visualisation of stakeholder and hacker interaction on the decentralised network.
+0. Show how companies and users (stakeholders) can stake money on open source software stacks in decentralised virtual machines and/or decentralised containerised applications.
+1. Explain why stakeholders need to specify a public key and responsible disclosure time.
+2. Take on hacker perspective and go through the steps of seeing a staked application, seeing what the reward is and when the reward will be received. 
+3. Mention the hacker can then develop a zero-day exploit, publish it to a decentralised locker, and reach out to the DVM smart contract using its own exploit smart contract.
+4. Describe the checks that are performed to ensure the attack is locked to the public but accessible to the stakeholders during the responsible disclosure time.
+5. Switch back to stakeholder perspective, which can now start patching their systems.
+6. Cover the publication and automatic evaluation of the exploit as well as how the DVM smart contract automatically pays out the bounty if the exploit indeed compromises the open source software stack.
+7. Summarise the interactions and mention the process starts over, where companies can deploy their patched systems and allocate new stakes.
+
+E. Cover protocol attacks by malicious actors, and accompanying incentives.
+0. Mention how malicious staking could be used to gain access to the locked exploit to abuse it within the responsible disclosure time. Mention how this incentive can be counteracted by different compromises to the level of decentralisation of the protocol. 
+1. Cover how malicious staking could be used to set unrealistic responsible disclosure times, and how hackers can ignore those bounties.
+2. Cover how malicious exploit publications could publish the exploit outside of the protocol environment and what the implications of this possibility are. Mention hacker gas cost deposits are required to prevent hackers from clogging the network with fake exploits.
+
+F. Mention weaknesses of protocol: 
 0. Anyone can see that a zero-day exists (not what it is). 
 1. Limited vulnerability scope due to deterministic verifiability requirement. 
 2. May incentivise companies to convey a false sense of security by overemphasising the numbers, instead of providing a full picture including misconfigurations, supply-chain attacks, social engineering etc.
-- Summarise based on which assumptions this protocol can improve market efficiency for deterministically verifiable zero-day exploits. 
-- Propose strategy to move forward to implementation.
+
+G. Summarise based on which assumptions this protocol can improve market efficiency for deterministically verifiable zero-day exploits. 
+
+H. Propose strategy to move forward to implementation.
 \subsection{Is this content 100\% new, never before presented?}
 Yes
 \subsection{If no,.. SKIP}
 SKIP
 \subsection{What new research, concept, technique or approach is included in your submission?}
-We believe gaining insight in "how secure a system is" is often difficult or costly, as it requires an analysis of many attack surfaces with risks that are not easily quantifiable. The presented approach makes it simple for anyone in the world with internet access to see how much money is staked on the security of a particular open-source software stack. Hence, the approach provides a partial and simple insight in the zero-day exploit segment of the cybersecurity market. This allows enterprise, small companies and even individual users to collectively (re)allocate their resources (in real-time), to match the most recent threat-landscape in that market segment. Additionally, it provides ethical hackers to rake bounties from multiple companies for multiple software packages in a single exploit. For example, consider a decentralised virtual machine running Ubuntu 20.04.4 LTS (\$2 million staked) With MongoDB 5.0.5 (\$300.000,- staked). If an ethical hacker is able to gain write-access to the Ubuntu 20.04.4 LTS instance, through an Ubuntu zero-day exploit, the hacker may, in some cases, also automatically gain write-access to the MongoDB data. That would allow the hacker to clear two bounties at once. This way, the protocol emphasises that a chain is only as strong as its weakest link. We hope that this may reduce the probabilities of occurrence of vulnerabilities like log4js, or at least expose how underfunded some weak links in open source software may be (such that resource re-allocation may take place).
+We believe gaining insight in "how secure a system is" is often difficult or costly, as it requires an analysis of many attack surfaces with risks that are not easily quantifiable. The presented approach makes it simple for anyone in the world with internet access to see how much money is staked on the security of a particular open-source software stack. Hence, the approach provides a partial and simple insight in the zero-day exploit segment of the cybersecurity market. This allows enterprise, small companies and even individual users to collectively (re)allocate their resources (in real-time), to match the most recent threat-landscape in that market segment. Additionally, it allows ethical hackers to rake bounties from multiple companies for multiple software packages in a single exploit. For example, consider a decentralised virtual machine running Ubuntu 20.04.4 LTS (\$2 million staked) With MongoDB 5.0.5 (\$300.000,- staked). If an ethical hacker is able to gain write-access to the Ubuntu 20.04.4 LTS instance, through an Ubuntu zero-day exploit, the hacker may, in some cases, also automatically gain write-access to the MongoDB data. That would allow the hacker to clear two bounties at once. This way, the protocol emphasises that a chain is only as strong as its weakest link. We hope that this may reduce the probabilities of occurrence of vulnerabilities like log4js, or at least expose how underfunded some weak links in open source software may be (such that resource re-allocation may take place).
 
 \subsection{Takeaways}
 We would like to make it easier for ethical hackers to get their bounties, whilst allowing companies to gain insight in how secure their open-source software stacks are, in terms of dollars. Moving forward, we would like to develop a free, open-source implementation of this protocol together with industry leaders.

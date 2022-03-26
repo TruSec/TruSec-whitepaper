@@ -37,7 +37,7 @@ We believe that might be clear language that enables decision makers and custome
 For the ethical/ethical hackers, the advantages are clear; they know before they start their work how large their payout will be, and they get a direct payout upon completion (after the predetermined responsible disclosure period has ended).
 
 \subsubsection{Disclaimer}
-The presented protocol does not provide a insight in the complete security of a system/company. As visualised in \cref{fig:protocol_scope}, the protocol does not cover all attack surfaces of companies. Hence, if other attack surfaces, such as social engineering are used, companies can still get compromised, regardless of the amount they staked. Therefore, it is important that the numerical value of the amount staked on the zero-day exploit security level is not abused to convey a false sense of security by the staking companies to their customers.
+The presented protocol does not provide insight in the complete security of a system/company. As visualised in \cref{fig:protocol_scope}, the protocol does not cover all attack surfaces of companies. Hence, if other attack surfaces, such as social engineering are used, companies can still get compromised, regardless of the amount they staked. Therefore, it is important that the numerical value of the amount staked on the zero-day exploit security level is not abused to convey a false sense of security by the staking companies to their customers.
 
 \subsection{Description}
 The protocol is shown in \cref{fig:interaction}.
@@ -54,7 +54,7 @@ The protocol is shown in \cref{fig:interaction}.
 \end{figure}
 \noindent 
 
-
+To summarize, the protocol enables companies and users of open source software to collectively stake money on the software stacks of their choice. Hackers can see these bounties and write a new zero-day exploit for these staked systems. Next, they can deploy their attack to a decentralised locker that only opens to the stakeholders. Only the hacker and the stakeholders can then see the zero-day exploit within the responsible disclosure time (RDT) they specified. Stakeholders can then patch their systems. After the RDT, the exploit is evaluated, and if it compromises the software stack, the hacker automatically receives the staked bounty. The cycle can then start over, with companies re-deploying their patched systems and applying new stakes to their respective security.
 
 
 \subsubsection{\Cref{fig:interaction} notes}
@@ -66,7 +66,7 @@ With respect to \cref{fig:interaction}, the following notes are made:
 \end{enumerate}
 
 \subsection{Incentives}
-To convey a better understand of the protocol, some of the incentives are evaluated along with the relevant steps shown in \cref{fig:interaction}. Starting with the responsible disclosure time (RDT), companies and stakeholders need to have sufficient time to patch their systems, that is why they have the liberty to specify the disclosure time they need. Since the attack needs to be private until the maximum specified RDT has passed, a check is performed to verify it is indeed hidden to the public in step 12 of \cref{fig:interaction}. 
+To convey a better understand of the protocol, some of the incentives are evaluated along with the relevant steps shown in \cref{fig:interaction}. Starting with the RDT, companies and stakeholders need to have sufficient time to patch their systems, that is why they have the liberty to specify the disclosure time they need. Since the attack needs to be private until the maximum specified RDT has passed, a check is performed to verify it is indeed hidden to the public in step 12 of \cref{fig:interaction}. 
 
 \subsubsection{Malicious staking}
 Malicious actors could stake a minimum amount to set the maximum RDT to an unreasonable amount, such as 3 centuries. To mitigate this tampering, hackers can select which bounties they want to collect. This allows them to forfeit the trivial stake with unreasonable RDT.
@@ -75,9 +75,11 @@ Another act of malicious staking could be to have a malicious agent stake to get
 \subsubsection{Malicious Exploit Publications}
 Hackers could also try to sabotage the protocol. For example, they could submit invalid solutions to clog the network. To prevent this, step 8 requires the hacker to deposit evaluation costs in order to be eligible for a payout.
 
-Another attack from hacker perspective could be to deny access to the stakers. This is why the companies should prevent a public key in steps 1 and 2, why the hacker should provide access for these keys in step 6, and the DVM smart contract should verify this access in steps 13 and 14.
+Another attack from a hacker perspective could be to deny access to the stakers. This is why the companies should present a public key in steps 1 and 2, why the hacker should provide access for these keys in step 6, and the DVM smart contract should verify this access in steps 13 and 14.
 
 Another form of malicious exploit publication would be to claim the bounty using the protocol and then to publish the exploit somewhere else anonymously within the RDT. The purely decentralised form has no defence against this behaviour. If it occurs frequently, a DAO/voting mechanism could be implemented that determines whether the exploit has remained hidden to the public, however this introduces subjectivity into the protocol and opens new kinds of attack surfaces.
 
 \subsection{Added Value}
 The protocol allows companies to show their users how secure their open sources software stacks are against deterministically verifiable zero-day exploits. This can be done by showing the users how much money is "staked" on the security of their respective systems. This simplifies the comparison that customers can make between the security of companies against deterministically verifiable zero-day exploits. Additionally, companies (as well as the users of these open source software stacks) can re-adjust their funds and resource allocations regarding cyber-security based on this insight. This mechanism could, over multiple cycles perhaps result in a more predictable zero-day exploit landscape.
+
+To improve the ease of use and practical application of the protocol, a variant could be written that allows for staking on decentralised containers instead of decentralised virtual machines. This could reduce the required computational resources and broaden the application of the protocol to containerized applications with a minimal attack surfaces.
