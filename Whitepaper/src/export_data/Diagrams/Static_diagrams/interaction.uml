@@ -28,8 +28,8 @@ autonumber
 
 "DVM"->"Big Company A": Notice attack.
 "DVM"->"Small Company B": Notice attack.
-"DVM"->"Big Company A": Get exploit using private key A.
-"DVM"->"Small Company B": Get exploit using private key B.
+"DEL"->"Big Company A": Get exploit using private key A.
+"DEL"->"Small Company B": Get exploit using private key B.
 "Big Company A"->"Big Company A": Patch their systems against exploit.
 "Small Company B"->"Small Company B": Patch their systems against exploit.
 
