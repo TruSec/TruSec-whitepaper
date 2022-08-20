@@ -144,3 +144,11 @@ def remove_all_auto_generated_appendices(hd):
     for file in all_appendix_files:
         if "Auto_generated" in file:
             delete_file_if_exists(file)
+
+def delete_dir_relative_to_root_if_not_exists(dir_relative_to_root):
+    """
+    :param dir_relative_to_root: A relative directory as seen from the root dir of this project.
+    """
+    if os.path.exists(dir_relative_to_root):
+        # Remove directory and its content.
+        shutil.rmtree(dir_relative_to_root)

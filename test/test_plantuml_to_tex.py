@@ -1,13 +1,9 @@
 import unittest
 import os
-from ..src.Main import Main
-from ..src.helper_dir_file_edit import *
-from ..src.plantuml_generate import *
-from ..src.plantuml_compile import compile_diagrams_in_dir_relative_to_root
-from ..src.plantuml_to_tex import export_diagrams_to_latex
-
-# import testbook
-
+from src.export_data.helper_dir_file_edit import *
+from src.export_data.plantuml_generate import *
+from src.export_data.plantuml_compile import compile_diagrams_in_dir_relative_to_root
+from src.export_data.plantuml_to_tex import export_diagrams_to_latex
 
 class Test_main(unittest.TestCase):
 

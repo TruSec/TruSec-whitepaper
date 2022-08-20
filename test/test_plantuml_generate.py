@@ -1,8 +1,7 @@
 import unittest
 import os
-from ..src.Main import Main
-from ..src.helper_dir_file_edit import *
-from ..src.plantuml_generate import *
+from src.export_data.helper_dir_file_edit import *
+from src.export_data.plantuml_generate import *
 
 # import testbook
 

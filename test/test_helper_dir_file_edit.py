@@ -1,7 +1,6 @@
 import unittest
 import os
-from ..src.Main import Main
-from ..src.helper_dir_file_edit import *
+from src.export_data.helper_dir_file_edit import create_dir_relative_to_root_if_not_exists, delete_dir_relative_to_root_if_not_exists, dir_relative_to_root_exists
 
 # import testbook
 
