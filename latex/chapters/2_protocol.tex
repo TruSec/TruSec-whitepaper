@@ -5,7 +5,7 @@ This section presents the TruSec protocol, and explains how it can improve the w
 \subsection{Scope}\label{subsec:scope}
 The protocol is primarily designed to automate deterministically verifiable zero-day exploits vulnerability disclosures. It can also be used to hedge against misconfigurations and supply-chain attacks. For example, companies can add a specific configuration (yaml) to the DVM, and add a bounty on that forked DVM. This way, a hacker may leverage the particular configuration to find an exploit. This procedure also allows the protocol to identify some supply-chain attack vulnerabilities. For example, if an invalid certificate is used to compromise the device.
 
-However, both misconfiguration and supply chain attack partially deviate from the main benefit of collective nature of the protocol. For example, it may incentivise hackers to focus efforts on particular configurations, that are not (necessarily) useful for other companies. However, at the same time, hackers could still opt to focus on the mutual elements of all forked decentralised virtual machines to collect the bounties with a single, more powerful exploit. This scope/applicability of the protocol is visualised in \cref{fig:protocol_scope}.
+However, both misconfiguration and supply chain attack partially deviate from the main benefit of collective nature of the protocol. For example, it may incentivise hackers to focus efforts on particular configurations, that are not (necessarily) useful for other companies. However, at the same time, hackers could still opt to focus on the mutual elements of all forked decentralised virtual machines (DVMs) to collect the bounties with a single, more powerful exploit. This scope/applicability of the protocol is visualised in \cref{fig:protocol_scope}.
 \begin{figure}[H]
     \centering
     \ifx\homepath\overleafhome
@@ -28,7 +28,7 @@ With respect to \cref{fig:protocol_scope}, the following notes are made:
 \subsection{Usage}
 \noindent With this scope defined, one can look at how companies and ethical hackers interact according to the proposed protocol.
 
-\noindent The basic idea is that companies and users (stakeholders) can put their open source software stacks on a decentralised virtual machine (DVM). They can then collectively stake money on the security of the stacks, such that everyone can see how much money says: \textit{the use of certain software packages/combinations is safe}. This enables companies, to show their customers for example:
+\noindent The basic idea is that companies and users (stakeholders) can put their open source software stacks on a decentralised virtual machine DVM. They can then collectively stake money on the security of the stacks, such that everyone can see how much money says: \textit{the use of certain software packages/combinations is safe}. This enables companies, to show their customers for example:
 
 \noindent \textit{With us, your data is stored using MongoDB Version 5.1, \$314.159,- says it is uncompromised, and it's running on Ubuntu Server version 21.10, which has \$4.200.000,- staked on its security. This setup has a configuration with a security on which we staked \$9001,-. If any of these software packages get compromised by ethical hackers, \underline{we will be the first to know.}}
 
