@@ -19,7 +19,7 @@ class Hardcoded_data:
         self.diagram_extension = ".png"
 
         # Filenames.
-        self.main_latex_filename = "report.tex"
+        self.main_latex_filename = "main.tex"
         self.export_data_dirname = "export_data"
         self.diagram_dir = "Diagrams"
         self.plant_uml_java_filename = "plantuml.jar"
