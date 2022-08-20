@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={150mm,237mm},
+ left=30mm,
+ top=20mm,
+ }
+
+% Include orchid
+\usepackage{academicons}
+%\definecolor{orcidlogocol}{HTML}{A6CE39}
+
+% Determine whether it is local compilation or overleaf compilation
+\makeatletter
+\begingroup\endlinechar=-1\relax
+       \everyeof{\noexpand}%
+       \edef\x{\endgroup\def\noexpand\homepath{%
+         \@@input|"kpsewhich --var-value=HOME" }}\x
+\makeatother
+\def\overleafhome{/tmp}% change as appropriate
+
+\bibliographystyle{plainurl}% the mandatory bibstyle
+\usepackage{float}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{amsmath} % need to be on top for eps files
+\usepackage{mathtools}
+
+\usepackage{graphicx}
+
+\usepackage{cleveref}
+
+\usepackage{algorithmicx}
+
+\usepackage{algcompatible}
+\crefname{algocf}{alg.}{algs.}
+\Crefname{algocf}{Algorithm}{Algorithms}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\renewcommand{\algorithmiccomment}[1]{\bgroup\hfill\tiny//~#1\egroup}
+\newcommand\bigO[1]{$\mathcal{O}(#1)$}
+
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+
+
+\title{Eliminating triage intermediaries for zero-day exploits using a decentralised payout protocol}
+%\subtitle{Eliminating triage intermediaries for zero-day exploits using a decentralised payout protocol.}
+\author{Chihab Amghane - Radboud University\\Victoria Bosch - Radboud University\\Rashim Charles - Radboud University\\Marc Droogh - Delft University\\Clara Maine - Radboud University\\Chinari Subhechha Subudhi - Delft University\\Akke Toeter - Delft University, Radboud University\\orcid: \url{https://orcid.org/0000-0002-9577-920X}\\Eric van der Toorn - Delft University}
+\date{August 2022}
+
+\begin{document}
+\makeatletter
+\renewcommand{\maketitle}{%
+       \begin{titlepage}%
+        % \@title
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}%
+    \center%
+    % University
+    \textsc{\LARGE TruSec}\\[1cm]%
+    % Document info%
+    \textsc{\Large Whitepaper}\\[0.2cm]%
+    %\textsc{\large code}\\[1cm]%
+    \HRule \\[0.8cm]%
+    {\huge \bfseries \@title}\\[0.7cm]%
+    {}%
+    \HRule \\[2cm]%
+    \large%
+    \emph{Authors}\\[2mm]%-
+    % Ensure authors are centered
+    {Chihab Amghane - Radboud University\\Victoria Bosch - Radboud University\\Rashim Charles - Radboud University\\Marc Droogh - Delft University\\Clara Maine - Radboud University\\Chinari Subhechha Subudhi - Delft University\\Akke Toeter - Delft University, Radboud University\\orcid: \url{https://orcid.org/0000-0002-9577-920X}\\Eric van der Toorn - Delft University}
+    \end{titlepage}%
+}
+\makeatother
+
+\maketitle
+
+\ifx\homepath\overleafhome
+% Overleaf compilation.
+    \input{chapters/0_introduction.tex}
+    \input{chapters/1_assumptions.tex}
+    \input{chapters/2_protocol.tex}
+    \input{chapters/3_implementation.tex}
+    \input{chapters/4_discussion.tex}%\newpage
+    \input{chapters/5_conclusion.tex}
+\else
+% Local compilation
+    \input{latex/chapters/0_introduction.tex}
+    \input{latex/chapters/1_assumptions.tex}
+    \input{latex/chapters/2_protocol.tex}
+    \input{latex/chapters/3_implementation.tex}
+    \input{latex/chapters/4_discussion.tex}%\newpage
+    \input{latex/chapters/5_conclusion.tex}
+\fi
+\end{document}
