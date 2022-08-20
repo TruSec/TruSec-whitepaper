@@ -309,6 +309,8 @@ do
 	## Post processing/clean-up.
 	# Move pdf back into "$PATH_TO_REPORT_TEX.
 	mv $OUTPUT_PATH/$REPORT_FILENAME.pdf "$PATH_TO_REPORT_TEX/$REPORT_FILENAME.pdf"
+	# Copy the whitepapers to the root directory
+	cp "$PATH_TO_REPORT_TEX/$REPORT_FILENAME.pdf" "$REPORT_FILENAME.pdf"
 
 	# Clean up build artifacts.
 	rm $OUTPUT_PATH/$REPORT_FILENAME.*
