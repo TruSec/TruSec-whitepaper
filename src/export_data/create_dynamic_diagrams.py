@@ -9,7 +9,7 @@ def create_dynamic_diagrams(args, hd):
     # Generate PlantUML diagrams dynamically (using code).
     if args.dd:
         generate_all_dynamic_diagrams(
-            f"{hd.path_to_export_data_from_root}/Diagrams/Dynamic"
+            f"{hd.path_to_export_data_from_root}/Diagrams/Dynamic_diagrams"
         )
 
         # Compile dynamically generated PlantUML diagrams to images.

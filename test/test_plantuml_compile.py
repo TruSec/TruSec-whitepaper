@@ -24,7 +24,7 @@ class Test_main(unittest.TestCase):
         diagram_text_filename = "trivial_gantt.uml"
         diagram_image_filename = "trivial_gantt.png"
         dynamic_diagram_dir_relative_to_root = (
-            f"code/{self.project_name}/src/Diagrams/Dynamic"
+            f"code/{self.project_name}/src/Diagrams/Dynamic_diagrams"
         )
         diagram_text_filepath_relative_to_root = (
             f"{dynamic_diagram_dir_relative_to_root}/{diagram_text_filename}"
