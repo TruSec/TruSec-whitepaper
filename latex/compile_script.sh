@@ -317,4 +317,3 @@ do
 	rm $OUTPUT_PATH/*.bib
 	rm $OUTPUT_PATH/latex/*.bst
 done
-exit 5
