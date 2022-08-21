@@ -1,6 +1,6 @@
 # run: conda env create --file environment.yml
 # include new packages: conda env update --file environment.yml
-name: dnc
+name: trusecwp
 channels:
   - conda-forge
   - conda

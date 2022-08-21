@@ -1,0 +1,29 @@
+@startuml
+skinparam rectangle {
+	roundCorner 25
+}
+rectangle "Attack Surfaces Covered by TruSec Protocol" {
+	rectangle "Social Engineering" as social <<V% of Cyber Attacks>> #red {
+	}
+	rectangle "Other Attack Surfaces" as other <<W% of Cyber Attacks>> #red {
+	}
+	
+	
+	rectangle "Misconfiguration" as miscon <<Y% of Cyber Attacks>> #orange {
+	}
+	rectangle "Supply-chain Attacks" as supplychain <<X% of Cyber Attacks>> #orange {
+	}
+	
+	rectangle "Zero-day Exploits" as zero <<Z% of Cyber Attacks>>  #green {
+	}
+        
+		social -right[hidden]-> other
+		social -down[hidden]-> supplychain
+		
+		supplychain -right[hidden]-> miscon
+		
+		miscon -down[hidden]-> zero
+		supplychain -down[hidden]-> zero
+
+}
+@enduml
